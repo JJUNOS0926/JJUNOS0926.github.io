@@ -287,28 +287,36 @@
       }
     });
 
-    // === Mobile nav toggle ===
-    (function(){
-      const navBtn = document.getElementById('navToggle');
-      const navMenu = document.getElementById('navMenu');
-      if(!navBtn || !navMenu) return;
-      navBtn.addEventListener('click', ()=>{
-        const opened = navMenu.classList.toggle('open');
-        navBtn.setAttribute('aria-expanded', opened ? 'true':'false');
-      });
-      // 메뉴 바깥 클릭 시 닫기
-      document.addEventListener('click', (e)=>{
-        if(!navMenu.classList.contains('open')) return;
-        const inside = navMenu.contains(e.target) || navBtn.contains(e.target);
-        if(!inside) navMenu.classList.remove('open');
-      });
-    })();
-navMenu.querySelectorAll('a, .toggle').forEach(el=>{
-  el.addEventListener('click', ()=>{
-    navMenu.classList.remove('open');
-    navBtn.setAttribute('aria-expanded','false');
+// === Mobile nav toggle ===
+(function(){
+  const navBtn  = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (!navBtn || !navMenu) return;
+
+  // 토글 버튼
+  navBtn.addEventListener('click', () => {
+    const opened = navMenu.classList.toggle('open');
+    navBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
   });
-});  
+
+  // 메뉴 바깥 클릭시 닫기
+  document.addEventListener('click', (e) => {
+    if (!navMenu.classList.contains('open')) return;
+    const inside = navMenu.contains(e.target) || navBtn.contains(e.target);
+    if (!inside) {
+      navMenu.classList.remove('open');
+      navBtn.setAttribute('aria-expanded', 'false'); // 추가
+    }
+  });
+
+  // 메뉴 항목 클릭 시 자동 닫기 (여기가 반드시 IIFE 안쪽이어야 함)
+  navMenu.querySelectorAll('a, .toggle').forEach((el) => {
+    el.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
 </script>
 </body>
 </html>

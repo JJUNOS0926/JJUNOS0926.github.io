@@ -91,6 +91,22 @@
 
       .edu-item{grid-template-columns:64px 1fr;padding:14px}
       .edu-meta{gap:6px}
+/* 모바일에서 드롭다운 메뉴 항목을 세로로 꽉 차게 */
+.nav-links a,
+.nav-links .toggle{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:6px 0 0 0;       /* 위에 여백만 살짝 */
+  padding:10px 12px;
+  border-radius:8px;
+}
+
+/* 데스크탑 기본 margin-left를 모바일에선 제거 */
+.nav-links a{ margin-left:0; }
+
+/* 호버 시 살짝 배경 */
+.nav-links a:hover{ background:var(--card); }
     }
     @media (max-width:480px){
       h1{font-size:clamp(22px, 5vw, 28px)}
@@ -287,6 +303,12 @@
         if(!inside) navMenu.classList.remove('open');
       });
     })();
-  </script>
+navMenu.querySelectorAll('a, .toggle').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    navMenu.classList.remove('open');
+    navBtn.setAttribute('aria-expanded','false');
+  });
+});  
+</script>
 </body>
 </html>

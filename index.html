@@ -8,12 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#ffffff;--text:#111827;--muted:#6b7280;--card:#f8fafc;--accent:#2563eb;--border:#e5e7eb;
-    }
-    [data-theme="dark"]{
-      --bg:#0b0f17;--text:#e5e7eb;--muted:#94a3b8;--card:#0f1520;--accent:#60a5fa;--border:#1f2937;
-    }
+    :root{ --bg:#ffffff;--text:#111827;--muted:#6b7280;--card:#f8fafc;--accent:#2563eb;--border:#e5e7eb; }
+    [data-theme="dark"]{ --bg:#0b0f17;--text:#e5e7eb;--muted:#94a3b8;--card:#0f1520;--accent:#60a5fa;--border:#1f2937; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
     a{color:var(--accent);text-decoration:none}
@@ -93,8 +89,8 @@
     <div class="container nav-row">
       <div><strong>Junsu Kim</strong></div>
       <div class="nav-links">
-        <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#achievements">Honors & Activities</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -120,47 +116,13 @@
   </header>
 
   <main class="container">
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About</h2>
-      <p class="muted">
-        B.S. in Electrical Engineering at KAIST (Mar 2021 – <i>Expected Aug 2027</i>).<br><br>
-        GPA 4.10/4.3 (overall), 4.20/4.3 (Major).
-      </p>
 
-      <div class="stack">
-        <div class="card accent">
-          <h3 class="section-subtitle">Honors</h3>
-          <ul class="tight">
-            <li>KAIST Presidential Fellowship (15th)</li>
-            <li>KAIST EE, Dean’s List Award <span class="muted">(Top 3% of EE)</span>, Spring 2024</li>
-            <li>KAIST, Freshman Dean’s List Award <span class="muted">(Top 3% of freshmen)</span>, Fall 2021</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 class="section-subtitle">Activities</h3>
-          <ul class="tight">
-            <li>YEHS (Young Engineers Honor Society), 2025–</li>
-            <li>Include (KAIST AI Studying Club), 2024–</li>
-            <li>SilverLining (KAIST International Volunteer Club), 2025–</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 class="section-subtitle">Skills</h3>
-          <p class="muted">C/C++, Python, PyTorch</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
+    <!-- 1) EDUCATION -->
     <section id="education">
       <h2>Education</h2>
       <div class="edu-list">
         <div class="edu-item">
-          <!-- 로고 JPG/PNG 아무거나 OK. 파일 경로: /images/edu/kaist.jpg -->
-          <img class="edu-logo" src="/images/edu/kaist.png?v=2" alt="KAIST logo">
+          <img class="edu-logo" src="/images/edu/kaist.jpg?v=1" alt="KAIST logo">
           <div>
             <div class="edu-meta">
               <span class="edu-title">Korea Advanced Institute of Science & Technology (KAIST)</span>
@@ -173,26 +135,37 @@
             </ul>
           </div>
         </div>
-        <!-- 다른 학위가 있으면 아래 블록 복붙해서 추가하면 됨 -->
-        <!--
-        <div class="edu-item">
-          <img class="edu-logo" src="/images/edu/kaist.jpg?v=1" alt="KAIST logo">
-          <div>
-            <div class="edu-meta">
-              <span class="edu-title">Korea Advanced Institute of Science & Technology (KAIST)</span>
-              <span class="muted">Seoul, South Korea</span>
-            </div>
-            <ul class="tight" style="list-style-type:square">
-              <li>M.S. in Artificial Intelligence</li>
-              <li>Sep 2024 – Present</li>
-            </ul>
-          </div>
-        </div>
-        -->
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
+    <!-- 2) HONORS & ACTIVITIES (+ optional Skills) -->
+    <section id="achievements">
+      <h2>Honors & Activities</h2>
+      <div class="stack">
+        <div class="card accent">
+          <h3 class="section-subtitle">Honors</h3>
+          <ul class="tight">
+            <li>KAIST Presidential Fellowship (15th)</li>
+            <li>KAIST EE, Dean’s List Award <span class="muted">(Top 3% of EE)</span>, Spring 2024</li>
+            <li>KAIST, Freshman Dean’s List Award <span class="muted">(Top 3% of freshmen)</span>, Fall 2021</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="section-subtitle">Activities</h3>
+          <ul class="tight">
+            <li>YEHS (Young Engineers Honor Society), 2025–</li>
+            <li>Include (KAIST AI Studying Club), 2024–</li>
+            <li>SilverLining (KAIST International Volunteer Club), 2025–</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="section-subtitle">Skills</h3>
+          <p class="muted">C/C++, Python, PyTorch</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) PUBLICATIONS -->
     <section id="publications">
       <h2>Publications</h2>
       <div class="card">
@@ -200,7 +173,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- 4) PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
       <div class="stack">
@@ -222,7 +195,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- 5) EXPERIENCE -->
     <section id="experience">
       <h2>Experience</h2>
       <div class="stack">

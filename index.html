@@ -33,7 +33,14 @@
     .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .tag{font-size:12px;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
     .foot{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border)}
-    .pfp{width:160px;height:160px;border-radius:16px;object-fit:cover;border:1px solid var(--border);background:var(--card)}
+	.pfp{
+	  width:160px; height:160px;
+	  border-radius:50%;
+	  object-fit:cover;
+	  object-position:50% 30%; /* 얼굴 조금 위로 */
+	  border:1px solid var(--border);
+	  background:var(--card);
+	}
     .toggle{border:none;background:transparent;color:var(--muted);cursor:pointer}
 
     /* === Vertical stacked cards for About sub-sections === */
@@ -92,7 +99,7 @@
     </div>
     <div style="display:flex;justify-content:center;align-items:start">
       <!-- 본인 사진 있으면 assets/profile.jpg 로 변경 -->
-	<img src="/assets/profile.jpg" alt="Junsu Kim" class="pfp">
+	<img src="/assets/profile.jpg?v=1" alt="Junsu Kim" class="pfp">
     </div>
   </header>
 

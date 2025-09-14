@@ -18,37 +18,53 @@
     html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
     a{color:var(--accent);text-decoration:none}
     .container{max-width:980px;margin:0 auto;padding:24px}
+
     nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:5}
     .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .nav-links a{margin-left:16px;color:var(--muted)}
+    .toggle{border:none;background:transparent;color:var(--muted);cursor:pointer}
+
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card)}
     .btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+
     .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:40px 0}
     .hero h1{font-size:32px;margin:0}
     .hero p{color:var(--muted);margin:6px 0 18px}
     @media (min-width:760px){ .hero{grid-template-columns:1.6fr .8fr} }
+
     section{padding:20px 0;border-top:1px solid var(--border)}
     .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .card.accent{border-left:4px solid var(--accent);padding-left:14px}
     .muted{color:var(--muted)}
     .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .tag{font-size:12px;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
-    .foot{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border)}
-	.pfp{
-	  width:160px; height:160px;
-	  border-radius:50%;
-	  object-fit:cover;
-	  object-position:50% 30%; /* 얼굴 조금 위로 */
-	  border:1px solid var(--border);
-	  background:var(--card);
-	}
-    .toggle{border:none;background:transparent;color:var(--muted);cursor:pointer}
-
-    /* === Vertical stacked cards for About sub-sections === */
     .stack{display:grid;gap:18px}
     .section-subtitle{margin:0 0 6px;font-size:18px}
     ul.tight{margin:6px 0 0;padding-left:18px}
     ul.tight li{margin:4px 0}
-    .card.accent{border-left:4px solid var(--accent);padding-left:14px}
+
+    /* Profile photo */
+    .pfp{
+      width:160px;height:160px;border-radius:50%;
+      object-fit:cover;object-position:50% 30%;
+      border:1px solid var(--border);background:var(--card);
+    }
+
+    /* Education cards */
+    .edu-list{display:grid;gap:18px}
+    .edu-item{
+      display:grid;grid-template-columns:88px 1fr;gap:18px;align-items:start;
+      background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;
+    }
+    .edu-logo{
+      width:72px;height:72px;border-radius:50%;
+      object-fit:contain;background:#fff;border:1px solid var(--border);padding:8px;
+    }
+    .edu-title{font-size:20px;font-weight:700}
+    .edu-meta{display:flex;justify-content:space-between;color:var(--muted);margin:4px 0 6px}
+    @media(min-width:760px){ .edu-item{grid-template-columns:96px 1fr} }
+
+    .foot{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border)}
   </style>
   <script>
     // theme toggle (light/dark/auto)
@@ -78,6 +94,7 @@
       <div><strong>Junsu Kim</strong></div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -92,14 +109,13 @@
       <h1>Hi, I'm Junsu 👋</h1>
       <p>Undergraduate @ KAIST (EE). Interests in <b>Computer Vision</b> & <b>3D Vision</b>, multi-view reconstruction, 3D Gaussian Splatting.</p>
       <div class="row" style="gap:10px">
-	<a class="btn primary" href="/cv/" target="_blank">📄 CV</a>
+        <a class="btn primary" href="/cv/" target="_blank">📄 CV</a>
         <a class="btn" href="mailto:sam9732@kaist.ac.kr">✉️ sam9732@kaist.ac.kr</a>
-        <a class="btn" href="https://github.com/JJUNOS0926" target="_blank">🐙 GitHub</a>
+        <a class="btn" href="https://github.com/JJUNOS926" target="_blank">🐙 GitHub</a>
       </div>
     </div>
     <div style="display:flex;justify-content:center;align-items:start">
-      <!-- 본인 사진 있으면 assets/profile.jpg 로 변경 -->
-	<img src="/images/pfp.jpg" alt="Junsu Kim" class="pfp">
+      <img src="/images/pfp.jpg?v=6" alt="Junsu Kim" class="pfp">
     </div>
   </header>
 
@@ -107,9 +123,11 @@
     <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
-      <p class="muted">B.S. in Electrical Engineering at KAIST (Mar 2021 – <i>Expected Aug 2027</i>). <br><br>GPA 4.10/4.3(overall), 4.20/4.3(Major).</p>
+      <p class="muted">
+        B.S. in Electrical Engineering at KAIST (Mar 2021 – <i>Expected Aug 2027</i>).<br><br>
+        GPA 4.10/4.3 (overall), 4.20/4.3 (Major).
+      </p>
 
-      <!-- vertical stacked cards -->
       <div class="stack">
         <div class="card accent">
           <h3 class="section-subtitle">Honors</h3>
@@ -133,6 +151,44 @@
           <h3 class="section-subtitle">Skills</h3>
           <p class="muted">C/C++, Python, PyTorch</p>
         </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <!-- 로고 JPG/PNG 아무거나 OK. 파일 경로: /images/edu/kaist.jpg -->
+          <img class="edu-logo" src="/images/edu/kaist.jpg?v=1" alt="KAIST logo">
+          <div>
+            <div class="edu-meta">
+              <span class="edu-title">Korea Advanced Institute of Science & Technology (KAIST)</span>
+              <span class="muted">Daejeon, South Korea</span>
+            </div>
+            <ul class="tight" style="list-style-type:square">
+              <li>B.S. in Electrical Engineering</li>
+              <li>Mar 2021 – <i>Expected Aug 2027</i></li>
+              <li class="muted">GPA: 4.10/4.3 (Major 4.20/4.3)</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 다른 학위가 있으면 아래 블록 복붙해서 추가하면 됨 -->
+        <!--
+        <div class="edu-item">
+          <img class="edu-logo" src="/images/edu/kaist.jpg?v=1" alt="KAIST logo">
+          <div>
+            <div class="edu-meta">
+              <span class="edu-title">Korea Advanced Institute of Science & Technology (KAIST)</span>
+              <span class="muted">Seoul, South Korea</span>
+            </div>
+            <ul class="tight" style="list-style-type:square">
+              <li>M.S. in Artificial Intelligence</li>
+              <li>Sep 2024 – Present</li>
+            </ul>
+          </div>
+        </div>
+        -->
       </div>
     </section>
 

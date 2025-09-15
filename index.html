@@ -50,7 +50,21 @@
     .card.accent{border-left:4px solid var(--accent);padding-left:14px}
     .muted{color:var(--muted)}
     .tag{font-size:12px;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+	/* --- Activities list (기간 오른쪽 정렬) --- */
+	ul.activities li {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	
+	ul.activities .name {
+	  flex: 1;
+	}
 
+	ul.activities .period {
+	  color: var(--muted);
+	  margin-left: 12px;
+	}
     /* --- Stacked list --- */
     .stack{display:grid;gap:18px}
     .section-subtitle{margin:0 0 6px;font-size:18px}
@@ -186,11 +200,11 @@
       <div class="stack">
         <div class="card accent">
           <h3 class="section-subtitle">Honors</h3>
-          <ul class="tight">
-            <li>KAIST Presidential Fellowship (15th)</li>
-            <li>KAIST EE, Dean’s List Award <span class="muted">(Top 3% of EE)</span>, Spring 2024</li>
-            <li>KAIST, Freshman Dean’s List Award <span class="muted">(Top 3% of freshmen)</span>, Fall 2021</li>
-          </ul>
+	<ul class="tight activities">
+ 	  <li><span class="name">YEHS (Young Engineers Honor Society)</span><span class="period">2025–</span></li>
+	  <li><span class="name">Include (KAIST AI Studying Club)</span><span class="period">2024–</span></li>
+	  <li><span class="name">SilverLining (KAIST International Volunteer Club)</span><span class="period">2025–</span></li>
+	</ul>
         </div>
 
         <div class="card">

@@ -50,21 +50,8 @@
     .card.accent{border-left:4px solid var(--accent);padding-left:14px}
     .muted{color:var(--muted)}
     .tag{font-size:12px;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
-	/* --- Activities list (기간 오른쪽 정렬) --- */
-	ul.activities li {
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	}
-	
-	ul.activities .name {
-	  flex: 1;
-	}
 
-	ul.activities .period {
-	  color: var(--muted);
-	  margin-left: 12px;
-	}
+
     /* --- Stacked list --- */
     .stack{display:grid;gap:18px}
     .section-subtitle{margin:0 0 6px;font-size:18px}
@@ -83,6 +70,50 @@
     }
     .edu-title{font-size:20px;font-weight:700}
     .edu-meta{display:flex;justify-content:space-between;color:var(--muted);margin:4px 0 6px}
+
+
+	/* --- Honors: key / value two-column list --- */
+	ul.kv{ list-style:none; margin:0; padding-left:0; }
+	ul.kv li{
+	  display:grid;
+	  grid-template-columns: 1fr auto; /* 왼쪽 넓게, 오른쪽 기간은 내용폭 */
+	  align-items:baseline;
+	  gap:16px;
+	  margin:8px 0;
+	}
+	ul.kv .k{ line-height:1.35; }
+	ul.kv .v{ color:var(--muted); white-space:nowrap; } /* 줄바꿈 방지로 오른쪽 정렬처럼 보임 */
+	ul.kv .sub{
+	  grid-column:1 / -1;        /* 설명은 전체 폭 사용 */
+	  color:var(--muted);
+	  font-style:italic;
+	  margin-left:0.75rem;
+	  margin-top:2px;
+	  line-height:1.35;
+	}
+
+
+
+	/* --- Activities: inline period style --- */
+	ul.activities .period{
+	  color:var(--muted);
+	  white-space:nowrap;     /* 2025–가 줄바꿈 안 나게 */
+	  margin-left:6px;
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* --- Footer --- */
     .foot{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border);margin-top:24px}
@@ -198,22 +229,35 @@
     <section id="honors">
       <h2>Honors & Activities</h2>
       <div class="stack">
-        <div class="card accent">
-          <h3 class="section-subtitle">Honors</h3>
-	<ul class="tight activities">
- 	  <li><span class="name">YEHS (Young Engineers Honor Society)</span><span class="period">2025–</span></li>
-	  <li><span class="name">Include (KAIST AI Studying Club)</span><span class="period">2024–</span></li>
-	  <li><span class="name">SilverLining (KAIST International Volunteer Club)</span><span class="period">2025–</span></li>
-	</ul>
-        </div>
+	<div class="card accent">
+	  <h3 class="section-subtitle">Honors</h3>
+	  <ul class="kv">
+	    <li>
+	      <span class="k">KAIST <strong>Presidential Fellowship</strong> (15th)</span>
+	      <span class="v">Feb 2025 – Present</span>
+	    </li>
+
+	    <li class="with-sub">
+	      <span class="k">KAIST EE, <strong>Dean’s List Award</strong></span>
+	      <span class="v">Spring 2024</span>
+	      <span class="sub">Awarded to the top 3% of all EE students</span>
+	    </li>
+
+	    <li class="with-sub">
+	      <span class="k">KAIST, <strong>Freshman Dean’s List Award</strong></span>
+	      <span class="v">Fall 2021</span>
+	      <span class="sub">Awarded to the top 3% of all freshman students</span>
+	    </li>
+	  </ul>
+	</div>
 
         <div class="card">
           <h3 class="section-subtitle">Activities</h3>
-          <ul class="tight">
-            <li>YEHS (Young Engineers Honor Society), 2025–</li>
-            <li>Include (KAIST AI Studying Club), 2024–</li>
-            <li>SilverLining (KAIST International Volunteer Club), 2025–</li>
-          </ul>
+	<ul class="tight activities">
+	  <li>YEHS (Young Engineers Honor Society)<span class="period"> · 2025–</span></li>
+	  <li>Include (KAIST AI Studying Club)<span class="period"> · 2024–</span></li>
+	  <li>SilverLining (KAIST International Volunteer Club)<span class="period"> · 2025–</span></li>
+	</ul>
         </div>
 
         <div class="card">

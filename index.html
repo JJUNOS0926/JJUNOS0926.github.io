@@ -188,7 +188,7 @@
       }
       .edu-item {
         display: grid;
-        grid-template-columns: 88px 1fr;
+        grid-template-columns: 112px 1fr;
         gap: 18px;
         align-items: start;
         background: var(--card);
@@ -196,15 +196,23 @@
         border-radius: 14px;
         padding: 16px;
       }
+
+      /* 카드형 통일 */
       .edu-logo {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
+        width: 90px;
+        height: 60px;
+        border-radius: 10px;
         object-fit: contain;
         background: #fff;
         border: 1px solid var(--border);
-        padding: 8px;
+        padding: 6px;
       }
+
+      /* NTU만 살짝 더 확대 */
+      .edu-logo-ntu {
+        padding: 3px; /* 내부 여백 축소 -> 로고가 더 크게 보임 */
+      }
+
       .edu-title {
         font-size: 20px;
         font-weight: 700;
@@ -301,8 +309,17 @@
         }
 
         .edu-item {
-          grid-template-columns: 64px 1fr;
+          grid-template-columns: 84px 1fr;
           padding: 14px;
+        }
+        .edu-logo {
+          width: 72px;
+          height: 48px;
+          border-radius: 9px;
+          padding: 5px;
+        }
+        .edu-logo-ntu {
+          padding: 2px; /* 모바일에서도 NTU만 살짝 확대 */
         }
         .edu-meta {
           flex-direction: column;
@@ -341,10 +358,19 @@
           grid-template-columns: 1fr;
         }
         .edu-logo {
-          width: 56px;
+          width: 84px;
           height: 56px;
-          margin-bottom: 6px;
+          margin-bottom: 8px;
+          padding: 5px;
         }
+        .edu-logo-ntu {
+          padding: 2px;
+        }
+        .edu-meta {
+          flex-direction: column;
+          gap: 6px;
+        }
+
         ul.kv li {
           grid-template-columns: 1fr;
           gap: 6px;
@@ -424,7 +450,7 @@
           <article class="edu-item">
             <img
               class="edu-logo"
-              src="images/edu/kaist_logo.png?v=2"
+              src="images/edu/kaist_logo.png?v=3"
               alt="KAIST logo"
             />
             <div>
@@ -444,8 +470,8 @@
 
           <article class="edu-item">
             <img
-              class="edu-logo"
-              src="images/edu/ntu_logo.jpg?v=2"
+              class="edu-logo edu-logo-ntu"
+              src="images/edu/ntu_logo.jpg?v=3"
               alt="NTU logo"
             />
             <div>

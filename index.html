@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="auto">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <title>Junsu Kim — Homepage</title>
     <meta
       name="description"
-      content="Junsu Kim — KAIST EE undergraduate. Computer Vision / 3D Vision, multi-view reconstruction, Gaussian Splatting."
+      content="Junsu Kim — KAIST EE undergraduate, exchange student at NTU. Research in Computer Vision, 3D/4D Vision, Gaussian Splatting, and embodied AI."
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,7 +39,12 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
           sans-serif;
         background: var(--bg);
         color: var(--text);
@@ -165,7 +170,8 @@
       }
       .section-subtitle {
         margin: 0 0 6px;
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 600;
       }
       ul.tight {
         margin: 6px 0 0;
@@ -208,68 +214,41 @@
         justify-content: space-between;
         color: var(--muted);
         margin: 4px 0 6px;
+        gap: 8px;
       }
 
-      /* --- Honors: key / value two-column list --- */
-      /* --- Honors 제목 좀 더 크게 --- */
-      .section-subtitle {
-        font-size: 20px; /* 기존 18px → 20px */
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      /* --- 공용: 좌측 항목 / 우측 기간(two-column) 리스트 --- */
+      /* --- Key / value two-column list --- */
       ul.kv {
-        /* ← 이 줄이 현재 빠져 있어서 불릿이 보일 수 있음 */
         list-style: none;
         margin: 0;
         padding-left: 0;
       }
-
       ul.kv li {
         display: grid;
-        grid-template-columns: 1fr auto; /* 왼쪽 내용, 오른쪽 기간 */
+        grid-template-columns: 1fr auto;
         align-items: baseline;
         gap: 16px;
-        margin: 6px 0; /* Honors/Activities 둘 다 간격 타이트하게 */
+        margin: 6px 0;
       }
-
       ul.kv .k {
         line-height: 1.35;
       }
       ul.kv .v {
         color: var(--muted);
-        white-space: nowrap; /* 기간 줄바꿈 방지 */
-        text-align: right; /* 더 깔끔한 우측 정렬 */
+        white-space: nowrap;
+        text-align: right;
       }
-
-      /* Honors의 설명 줄 붙여주기 */
       ul.kv .sub {
-        grid-column: 1 / -1; /* 전체 폭 사용 */
+        grid-column: 1 / -1;
         color: var(--muted);
         font-style: italic;
         margin-left: 0.75rem;
-        margin-top: 0; /* 위 간격 제거 */
+        margin-top: 0;
         font-size: 14px;
         line-height: 1.4;
       }
-
-      /* Activities는 간격을 더 촘촘하게 */
       ul.kv.activities li {
         margin: 4px 0;
-      }
-
-      /* 모바일에서 한 줄로 비좁을 때 자동으로 세로 스택 */
-      @media (max-width: 480px) {
-        ul.kv li {
-          grid-template-columns: 1fr;
-          gap: 6px;
-        }
-        ul.kv .v {
-          justify-self: start;
-          margin-left: 0.75rem;
-          text-align: left;
-        }
       }
 
       /* --- Footer --- */
@@ -326,29 +305,27 @@
           padding: 14px;
         }
         .edu-meta {
+          flex-direction: column;
           gap: 6px;
         }
-        /* 모바일에서 드롭다운 메뉴 항목을 세로로 꽉 차게 */
+
         .nav-links a,
         .nav-links .toggle {
           display: block;
           width: 100%;
           text-align: left;
-          margin: 6px 0 0 0; /* 위에 여백만 살짝 */
+          margin: 6px 0 0 0;
           padding: 10px 12px;
           border-radius: 8px;
         }
-
-        /* 데스크탑 기본 margin-left를 모바일에선 제거 */
         .nav-links a {
           margin-left: 0;
         }
-
-        /* 호버 시 살짝 배경 */
         .nav-links a:hover {
           background: var(--card);
         }
       }
+
       @media (max-width: 480px) {
         h1 {
           font-size: clamp(22px, 5vw, 28px);
@@ -368,8 +345,14 @@
           height: 56px;
           margin-bottom: 6px;
         }
-        .edu-meta {
-          flex-direction: column;
+        ul.kv li {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        ul.kv .v {
+          justify-self: start;
+          margin-left: 0.75rem;
+          text-align: left;
         }
       }
     </style>
@@ -380,7 +363,6 @@
       <div class="container nav-row">
         <div><strong>Junsu Kim</strong></div>
 
-        <!-- 모바일 토글 버튼 -->
         <button
           id="navToggle"
           class="toggle nav-toggle"
@@ -390,14 +372,15 @@
           ☰ Menu
         </button>
 
-        <!-- 메뉴 -->
         <div id="navMenu" class="nav-links">
           <a href="#education">Education</a>
-          <a href="#honors">Honors & Activities</a>
+          <a href="#experience">Experience</a>
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="/cv/" target="_blank">CV</a>
+          <a href="#honors">Honors</a>
+          <a href="#activities">Activities</a>
+          <a href="#skills">Skills</a>
+          <a href="/cv.pdf" target="_blank">CV</a>
           <button id="themeBtn" class="toggle" aria-label="Toggle theme">
             🌙 Dark
           </button>
@@ -410,9 +393,9 @@
       <div>
         <h1>Hi, I'm Junsu 👋</h1>
         <p>
-          Undergraduate @ KAIST (EE). Interests in <b>Computer Vision</b> &
-          <b>3D Vision</b>, multi-view reconstruction, and 3D Gaussian
-          Splatting.
+          Undergraduate @ KAIST (EE), currently exchange student @ NTU. Research
+          interests in <b>Computer Vision</b>, <b>3D/4D Vision</b>, multi-view
+          reconstruction, Gaussian Splatting, and embodied AI world modeling.
         </p>
         <div class="row">
           <a class="btn primary" href="/cv.pdf" target="_blank">📄 CV</a>
@@ -422,12 +405,13 @@
           <a class="btn" href="https://github.com/JJUNOS0926" target="_blank"
             >🐙 GitHub</a
           >
+          <!-- LinkedIn 있으면 추가 -->
+          <!-- <a class="btn" href="https://www.linkedin.com/in/..." target="_blank">in LinkedIn</a> -->
         </div>
       </div>
       <div
         style="display: flex; justify-content: center; align-items: flex-start"
       >
-        <!-- 프로필 사진: 프로젝트/사용자 페이지 모두 안전하도록 상대경로 사용 -->
         <img src="images/profile.jpg?v=2" alt="Junsu Kim" class="pfp" />
       </div>
     </header>
@@ -446,126 +430,40 @@
             <div>
               <div class="edu-meta">
                 <div class="edu-title">
-                  Korea Advanced Institute of Science & Technology (KAIST)
+                  Korea Advanced Institute of Science and Technology (KAIST)
                 </div>
                 <div class="muted">Daejeon, South Korea</div>
               </div>
               <ul class="tight">
                 <li>B.S. in Electrical Engineering</li>
                 <li>Mar 2021 – <i>Expected Aug 2027</i></li>
-                <li>GPA: 4.10/4.3 (Major 4.20/4.3)</li>
+                <li>GPA: 4.10/4.3 (Major GPA: 4.19/4.3)</li>
               </ul>
             </div>
           </article>
-        </div>
-      </section>
 
-      <!-- ===== HONORS & ACTIVITIES ===== -->
-      <section id="honors">
-        <h2>Honors & Activities</h2>
-        <div class="stack">
-          <div class="card accent">
-            <h3 class="section-subtitle">Honors</h3>
-            <ul class="kv">
-              <li>
-                <span class="k"
-                  >KAIST <strong>Presidential Fellowship</strong> (15th)</span
-                >
-                <span class="v">Feb 2025 – Present</span>
-              </li>
-
-              <li class="with-sub">
-                <span class="k"
-                  >KAIST EE, <strong>Dean’s List Award</strong></span
-                >
-                <span class="v">Spring 2024</span>
-                <span class="sub"
-                  >Awarded to the top 3% of all EE students</span
-                >
-              </li>
-
-              <li class="with-sub">
-                <span class="k"
-                  >KAIST, <strong>Freshman Dean’s List Award</strong></span
-                >
-                <span class="v">Fall 2021</span>
-                <span class="sub"
-                  >Awarded to the top 3% of all freshman students</span
-                >
-              </li>
-
-              <li>
-                <span class="k"
-                  >Woon Hae <strong>Scholarship</strong> (12nd)</span
-                >
-                <span class="v">Feb 2025 – Dec 2025</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 class="section-subtitle">Activities</h3>
-            <ul class="kv activities">
-              <li>
-                <span class="k">YEHS (Young Engineers Honor Society)</span>
-                <span class="v">Jan 2025 – Present</span>
-              </li>
-              <li>
-                <span class="k">Include (KAIST AI Studying Club)</span>
-                <span class="v">Sep 2024 – Present</span>
-              </li>
-              <li>
-                <span class="k"
-                  >SilverLining (KAIST International Volunteer Club)</span
-                >
-                <span class="v">Mar 2025 – Present</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 class="section-subtitle">Skills</h3>
-            <p class="muted">C/C++, Python, PyTorch</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== PUBLICATIONS ===== -->
-      <section id="publications">
-        <h2>Publications</h2>
-        <div class="card">
-          <p class="muted">— (Add here when available)</p>
-        </div>
-      </section>
-
-      <!-- ===== PROJECTS ===== -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="stack">
-          <div class="card">
-            <strong>Face Verification with AM-Softmax (EE40034, KAIST)</strong>
-            <p class="muted">
-              Course project on deep metric learning for face verification using
-              ResNet-18 and AM-Softmax.
-            </p>
-            <ul class="tight">
-              <li>
-                Built a two-stage training pipeline (Train1 from scratch, Train2
-                fine-tuning).
-              </li>
-              <li>
-                Performed ablation on loss, optimizer, scheduler, and
-                augmentation strategies.
-              </li>
-            </ul>
-            <div class="row">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Metric Learning</span>
-              <span class="tag">Face Verification</span>
-              <!-- 나중에 repo나 보고서 링크 생기면 여기에 추가
-            <a href="https://github.com/..." class="muted" target="_blank">report / code ↗</a>
-            --></div>
-          </div>
+          <article class="edu-item">
+            <img
+              class="edu-logo"
+              src="images/edu/ntu_logo.png?v=1"
+              alt="NTU logo"
+            />
+            <div>
+              <div class="edu-meta">
+                <div class="edu-title">
+                  Nanyang Technological University (NTU)
+                </div>
+                <div class="muted">Singapore</div>
+              </div>
+              <ul class="tight">
+                <li>
+                  Exchange Student, School of Electrical and Electronic
+                  Engineering
+                </li>
+                <li>Jan 2026 – May 2026</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -575,39 +473,209 @@
         <div class="stack">
           <div class="card">
             <div class="row">
-              <strong>CVLAB, KAIST</strong
-              ><span class="muted">Jun 2025 – Present</span>
+              <strong>S-Lab (MMLab), NTU</strong
+              ><span class="muted">Jan 2026 – Present</span>
+            </div>
+            <p class="muted">Research Intern (Advisor: Prof. Ziwei Liu, NTU)</p>
+            <ul class="tight">
+              <li>
+                Conducting research on 4D world modeling for embodied AI,
+                integrating multi-view visual perception with video diffusion
+                models and 3D scene representations.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="row">
+              <strong>Computer Vision Lab (CVLAB), KAIST AI</strong
+              ><span class="muted">Jun 2025 – Dec 2025</span>
             </div>
             <p class="muted">
               Research Intern (Advisor: Prof. Seungryong Kim, KAIST AI)
             </p>
             <ul class="tight">
               <li>
-                3D Vision: multi-view reconstruction, 3D Gaussian Splatting
+                Conducting research on 3D vision: multi-view scene
+                reconstruction pipelines integrating Gaussian Splatting and
+                transformer-based depth estimation (VGGT / NoPoSplat).
               </li>
             </ul>
           </div>
+
           <div class="card">
             <div class="row">
-              <strong>VICLAB, KAIST</strong
+              <strong>Video and Image Computing Lab (VICLAB), KAIST</strong
               ><span class="muted">Dec 2024 – Jun 2025</span>
             </div>
             <p class="muted">
               Research Intern (Advisor: Prof. Mun Churl Kim, KAIST EE)
             </p>
             <ul class="tight">
+              <li>Reviewed object detection models (RCNN–YOLO, ViT).</li>
               <li>
-                Reviewed RCNN–YOLO, ViT and implemented few-shot/anomaly
-                detection baselines
+                Implemented baseline detectors for few-shot and anomaly
+                detection tasks.
               </li>
             </ul>
           </div>
         </div>
       </section>
+
+      <!-- ===== PUBLICATIONS ===== -->
+      <section id="publications">
+        <h2>Publications</h2>
+        <div class="card">
+          <ul class="tight">
+            <li>
+              <strong
+                >Learning Compact 3D Representations from Feed-Forward Novel
+                View Synthesis</strong
+              ><br />
+              Honggyu An*, Jaewoo Jung*, ... , Hyunah Ko, Junsu Kim, ... ,
+              Seungryong Kim.<br />
+              CVPR 2026 (under review). *Equal contribution.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS ===== -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="stack">
+          <div class="card">
+            <strong
+              >FaceVerify-AM: Face Verification with AM-Softmax (EE.40034,
+              KAIST)</strong
+            >
+            <p class="muted">
+              Two-stage metric-learning pipeline for face verification using
+              ResNet-18 and AM-Softmax.
+            </p>
+            <ul class="tight">
+              <li>Scratch training → fine-tuning structured training design</li>
+              <li>
+                Ablation on loss, optimizer, LR scheduler, and augmentation
+                strategies
+              </li>
+              <li>Achieved 8.02% EER (baseline: 22.31%)</li>
+            </ul>
+            <div class="row">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Metric Learning</span>
+              <span class="tag">Face Verification</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HONORS ===== -->
+      <section id="honors">
+        <h2>Honors</h2>
+        <div class="card accent">
+          <ul class="kv">
+            <li>
+              <span class="k"
+                >KAIST <strong>Presidential Fellowship</strong> (15th)</span
+              >
+              <span class="v">Feb 2025 – Present</span>
+            </li>
+            <li class="with-sub">
+              <span class="k"
+                >KAIST EE, <strong>Dean’s List Award</strong></span
+              >
+              <span class="v">Spring 2024</span>
+              <span class="sub">Awarded to the top 3% of all EE students</span>
+            </li>
+            <li class="with-sub">
+              <span class="k"
+                >KAIST, <strong>Freshman Dean’s List Award</strong></span
+              >
+              <span class="v">Fall 2021</span>
+              <span class="sub"
+                >Awarded to the top 3% of all freshman students</span
+              >
+            </li>
+            <li>
+              <span class="k"
+                >Woon Hae <strong>Scholarship</strong> (12th)</span
+              >
+              <span class="v">Feb 2025 – Dec 2025</span>
+            </li>
+            <li>
+              <span class="k"
+                >National Science & Engineering Scholarship for Academic
+                Excellence</span
+              >
+              <span class="v">Aug 2025 – Present</span>
+            </li>
+            <li>
+              <span class="k"
+                >KAIST Shared Lives Award (Top-ranked Recipient)</span
+              >
+              <span class="v">Feb 2026</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== ACTIVITIES ===== -->
+      <section id="activities">
+        <h2>Activities</h2>
+        <div class="card">
+          <ul class="kv activities">
+            <li>
+              <span class="k">KAIST AI Studying Club (Include)</span>
+              <span class="v">Sep 2024 – Dec 2025</span>
+            </li>
+            <li>
+              <span class="k">Google Student Ambassador</span>
+              <span class="v">Sep 2025 – Dec 2025</span>
+            </li>
+            <li>
+              <span class="k">Young Engineers Honor Society (YEHS)</span>
+              <span class="v">Jan 2025 – Present</span>
+            </li>
+            <li>
+              <span class="k"
+                >KAIST International Volunteer Club (SilverLining)</span
+              >
+              <span class="v">Mar 2025 – Dec 2025</span>
+            </li>
+            <li>
+              <span class="k">KAIST Freshman Proctor</span>
+              <span class="v">Feb 2024 – Dec 2024</span>
+            </li>
+            <li>
+              <span class="k"
+                >KAIST Freshman Tutoring Program (Calculus I)</span
+              >
+              <span class="v">Mar 2022 – Jun 2022</span>
+            </li>
+            <li>
+              <span class="k">EERun (KAIST EE Running Club), President</span>
+              <span class="v">Sep 2024 – Dec 2025</span>
+            </li>
+          </ul>
+          <p class="muted" style="margin-top: 8px">
+            Other extracurriculars: Orchestra, Sports, Student Clubs
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="card">
+          <p><strong>Programming:</strong> C/C++, Python, PyTorch</p>
+          <p><strong>English:</strong> TOEFL 101</p>
+        </div>
+      </section>
     </main>
 
     <div class="foot">
-      © 2025 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">Contact</a>
+      © 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">Contact</a>
     </div>
 
     <script>
@@ -617,7 +685,9 @@
         if (t === "auto") {
           root.setAttribute(
             "data-theme",
-            matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light"
+            matchMedia("(prefers-color-scheme:dark)").matches
+              ? "dark"
+              : "light",
           );
         } else {
           root.setAttribute("data-theme", t);
@@ -630,7 +700,7 @@
           ? matchMedia("(prefers-color-scheme:dark)").matches
             ? "dark"
             : "light"
-          : saved
+          : saved,
       );
       window.addEventListener("DOMContentLoaded", () => {
         const btn = document.getElementById("themeBtn");
@@ -657,24 +727,21 @@
         const navMenu = document.getElementById("navMenu");
         if (!navBtn || !navMenu) return;
 
-        // 토글 버튼
         navBtn.addEventListener("click", () => {
           const opened = navMenu.classList.toggle("open");
           navBtn.setAttribute("aria-expanded", opened ? "true" : "false");
         });
 
-        // 메뉴 바깥 클릭시 닫기
         document.addEventListener("click", (e) => {
           if (!navMenu.classList.contains("open")) return;
           const inside =
             navMenu.contains(e.target) || navBtn.contains(e.target);
           if (!inside) {
             navMenu.classList.remove("open");
-            navBtn.setAttribute("aria-expanded", "false"); // 추가
+            navBtn.setAttribute("aria-expanded", "false");
           }
         });
 
-        // 메뉴 항목 클릭 시 자동 닫기 (여기가 반드시 IIFE 안쪽이어야 함)
         navMenu.querySelectorAll("a, .toggle").forEach((el) => {
           el.addEventListener("click", () => {
             navMenu.classList.remove("open");

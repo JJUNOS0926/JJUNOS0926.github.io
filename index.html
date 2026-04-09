@@ -181,6 +181,28 @@
         margin: 4px 0;
       }
 
+      /* --- Experience --- */
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .exp-title {
+        font-weight: 700;
+        font-size: 1.03rem;
+      }
+      .exp-date {
+        color: var(--muted);
+        white-space: nowrap;
+        text-align: right;
+        font-size: 0.95rem;
+      }
+      .exp-role {
+        color: var(--muted);
+        margin: 10px 0 0;
+      }
+
       /* --- Education cards --- */
       .edu-list {
         display: grid;
@@ -197,7 +219,6 @@
         padding: 16px;
       }
 
-      /* 카드형 통일 */
       .edu-logo {
         width: 90px;
         height: 60px;
@@ -208,7 +229,6 @@
         padding: 6px;
       }
 
-      /* NTU만 살짝 더 확대 */
       .edu-logo-ntu {
         padding: 3px;
       }
@@ -326,6 +346,16 @@
           gap: 6px;
         }
 
+        .exp-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+        }
+        .exp-date {
+          white-space: normal;
+          text-align: left;
+        }
+
         .nav-links a,
         .nav-links .toggle {
           display: block;
@@ -431,8 +461,6 @@
           <a class="btn" href="https://github.com/JJUNOS0926" target="_blank"
             >🐙 GitHub</a
           >
-          <!-- LinkedIn 있으면 추가 -->
-          <!-- <a class="btn" href="https://www.linkedin.com/in/..." target="_blank">in LinkedIn</a> -->
         </div>
       </div>
       <div
@@ -498,11 +526,13 @@
         <h2>Experience</h2>
         <div class="stack">
           <div class="card">
-            <div class="row">
-              <strong>S-Lab (MMLab), NTU</strong
-              ><span class="muted">Jan 2026 – Present</span>
+            <div class="exp-header">
+              <div class="exp-title">S-Lab (MMLab), NTU</div>
+              <div class="exp-date">Jan 2026 – Present</div>
             </div>
-            <p class="muted">Research Intern (Advisor: Prof. Ziwei Liu, NTU)</p>
+            <p class="exp-role">
+              Research Intern (Advisor: Prof. Ziwei Liu, NTU)
+            </p>
             <ul class="tight">
               <li>
                 Conducting research on egocentric vision and tool-use
@@ -513,11 +543,11 @@
           </div>
 
           <div class="card">
-            <div class="row">
-              <strong>Computer Vision Lab (CVLAB), KAIST AI</strong
-              ><span class="muted">Jun 2025 – Dec 2025</span>
+            <div class="exp-header">
+              <div class="exp-title">Computer Vision Lab (CVLAB), KAIST AI</div>
+              <div class="exp-date">Jun 2025 – Dec 2025</div>
             </div>
-            <p class="muted">
+            <p class="exp-role">
               Research Intern (Advisor: Prof. Seungryong Kim, KAIST AI)
             </p>
             <ul class="tight">
@@ -530,11 +560,13 @@
           </div>
 
           <div class="card">
-            <div class="row">
-              <strong>Video and Image Computing Lab (VICLAB), KAIST</strong
-              ><span class="muted">Dec 2024 – Jun 2025</span>
+            <div class="exp-header">
+              <div class="exp-title">
+                Video and Image Computing Lab (VICLAB), KAIST
+              </div>
+              <div class="exp-date">Dec 2024 – Jun 2025</div>
             </div>
-            <p class="muted">
+            <p class="exp-role">
               Research Intern (Advisor: Prof. Mun Churl Kim, KAIST EE)
             </p>
             <ul class="tight">
@@ -554,12 +586,14 @@
         <div class="card">
           <ul class="tight">
             <li>
-              <strong
-                >Learning Compact 3D Representations from Feed-Forward Novel
-                View Synthesis</strong
-              ><br />
+              <strong>
+                Learning Compact 3D Representations from Feed-Forward Novel View
+                Synthesis
+              </strong>
+              <br />
               Honggyu An*, Jaewoo Jung*, ... , Hyunah Ko, Junsu Kim, ... ,
-              Seungryong Kim.<br />
+              Seungryong Kim.
+              <br />
               CVPR 2026. *Equal contribution.
             </li>
           </ul>
@@ -571,10 +605,9 @@
         <h2>Projects</h2>
         <div class="stack">
           <div class="card">
-            <strong
-              >FaceVerify-AM: Face Verification with AM-Softmax (EE.40034,
-              KAIST)</strong
-            >
+            <strong>
+              FaceVerify-AM: Face Verification with AM-Softmax (EE.40034, KAIST)
+            </strong>
             <p class="muted">
               Two-stage metric-learning pipeline for face verification using
               ResNet-18 and AM-Softmax.
@@ -602,51 +635,51 @@
         <div class="card accent">
           <ul class="kv">
             <li>
-              <span class="k"
-                >KAIST <strong>Presidential Fellowship</strong> (15th)</span
-              >
+              <span class="k">
+                KAIST <strong>Presidential Fellowship</strong> (15th)
+              </span>
               <span class="v">Feb 2025 – Present</span>
             </li>
             <li class="with-sub">
-              <span class="k"
-                >KAIST EE, <strong>Dean’s List Award</strong></span
-              >
+              <span class="k">
+                KAIST EE, <strong>Dean’s List Award</strong>
+              </span>
               <span class="v">Spring 2024</span>
               <span class="sub">Awarded to the top 3% of all EE students</span>
             </li>
             <li class="with-sub">
-              <span class="k"
-                >KAIST, <strong>Freshman Dean’s List Award</strong></span
-              >
+              <span class="k">
+                KAIST, <strong>Freshman Dean’s List Award</strong>
+              </span>
               <span class="v">Fall 2021</span>
-              <span class="sub"
-                >Awarded to the top 3% of all freshman students</span
-              >
+              <span class="sub">
+                Awarded to the top 3% of all freshman students
+              </span>
             </li>
             <li>
-              <span class="k"
-                >Woon Hae <strong>Scholarship</strong> (12th)</span
-              >
+              <span class="k">
+                Woon Hae <strong>Scholarship</strong> (12th)
+              </span>
               <span class="v">Feb 2025 – Dec 2025</span>
             </li>
             <li>
-              <span class="k"
-                >National Science & Engineering Scholarship for Academic
-                Excellence</span
-              >
+              <span class="k">
+                National Science & Engineering Scholarship for Academic
+                Excellence
+              </span>
               <span class="v">Aug 2025 – Present</span>
             </li>
             <li>
-              <span class="k"
-                >KAIST Shared Lives Award (Top-ranked Recipient)</span
-              >
+              <span class="k">
+                KAIST Shared Lives Award (Top-ranked Recipient)
+              </span>
               <span class="v">Feb 2026</span>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- ===== ACTIVITIES (Slimmed) ===== -->
+      <!-- ===== ACTIVITIES ===== -->
       <section id="activities">
         <h2>Activities</h2>
         <div class="card">
@@ -690,7 +723,6 @@
     </div>
 
     <script>
-      // === Theme toggle (light/dark/auto saved) ===
       const applyTheme = (t) => {
         const root = document.documentElement;
         if (t === "auto") {
@@ -704,6 +736,7 @@
           root.setAttribute("data-theme", t);
         }
       };
+
       const saved = localStorage.getItem("theme") || "auto";
       document.documentElement.setAttribute(
         "data-theme",
@@ -713,6 +746,7 @@
             : "light"
           : saved,
       );
+
       window.addEventListener("DOMContentLoaded", () => {
         const btn = document.getElementById("themeBtn");
         if (btn) {
@@ -732,7 +766,6 @@
         }
       });
 
-      // === Mobile nav toggle ===
       (function () {
         const navBtn = document.getElementById("navToggle");
         const navMenu = document.getElementById("navMenu");

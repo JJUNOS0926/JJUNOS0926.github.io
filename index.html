@@ -72,16 +72,32 @@
           sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at 15% 8%, rgba(37, 99, 235, 0.12), transparent 28%),
-          radial-gradient(circle at 88% 5%, rgba(124, 58, 237, 0.09), transparent 26%),
-          radial-gradient(circle at 80% 42%, rgba(15, 118, 110, 0.08), transparent 26%),
+          radial-gradient(
+            circle at 15% 8%,
+            rgba(37, 99, 235, 0.12),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 88% 5%,
+            rgba(124, 58, 237, 0.09),
+            transparent 26%
+          ),
+          radial-gradient(
+            circle at 80% 42%,
+            rgba(15, 118, 110, 0.08),
+            transparent 26%
+          ),
           var(--bg);
       }
 
       a {
         color: var(--accent);
         text-decoration: none;
-        transition: color 0.18s ease, background 0.18s ease, border 0.18s ease, transform 0.18s ease;
+        transition:
+          color 0.18s ease,
+          background 0.18s ease,
+          border 0.18s ease,
+          transform 0.18s ease;
       }
 
       a:hover {
@@ -182,9 +198,17 @@
         border: 1px solid var(--border);
         border-radius: calc(var(--radius) + 8px);
         background:
-          linear-gradient(135deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-solid) 70%, transparent)),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--surface-solid) 90%, transparent),
+            color-mix(in srgb, var(--surface-solid) 70%, transparent)
+          ),
           radial-gradient(circle at 0% 0%, var(--accent-soft), transparent 38%),
-          radial-gradient(circle at 100% 100%, var(--teal-soft), transparent 34%);
+          radial-gradient(
+            circle at 100% 100%,
+            var(--teal-soft),
+            transparent 34%
+          );
         box-shadow: var(--shadow);
         display: grid;
         grid-template-columns: minmax(0, 1.65fr) 220px;
@@ -199,7 +223,11 @@
         width: 260px;
         height: 260px;
         border-radius: 999px;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.12), transparent 70%);
+        background: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.12),
+          transparent 70%
+        );
         pointer-events: none;
       }
 
@@ -248,7 +276,12 @@
         position: relative;
         padding: 7px;
         border-radius: 999px;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent-2),
+          var(--accent-3)
+        );
         box-shadow: 0 18px 36px rgba(37, 99, 235, 0.16);
       }
 
@@ -295,7 +328,11 @@
       }
 
       .btn.primary {
-        background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent-3) 78%, var(--accent)));
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          color-mix(in srgb, var(--accent-3) 78%, var(--accent))
+        );
         color: #fff;
         border-color: transparent;
       }
@@ -317,9 +354,21 @@
         background: color-mix(in srgb, var(--surface-solid) 76%, transparent);
       }
 
-      .chip:nth-child(1) { border-color: color-mix(in srgb, var(--accent) 26%, var(--border)); color: var(--accent); background: var(--accent-soft); }
-      .chip:nth-child(2) { border-color: color-mix(in srgb, var(--accent-2) 26%, var(--border)); color: var(--accent-2); background: var(--teal-soft); }
-      .chip:nth-child(3) { border-color: color-mix(in srgb, var(--accent-3) 26%, var(--border)); color: var(--accent-3); background: var(--violet-soft); }
+      .chip:nth-child(1) {
+        border-color: color-mix(in srgb, var(--accent) 26%, var(--border));
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
+      .chip:nth-child(2) {
+        border-color: color-mix(in srgb, var(--accent-2) 26%, var(--border));
+        color: var(--accent-2);
+        background: var(--teal-soft);
+      }
+      .chip:nth-child(3) {
+        border-color: color-mix(in srgb, var(--accent-3) 26%, var(--border));
+        color: var(--accent-3);
+        background: var(--violet-soft);
+      }
 
       /* --- SECTIONS / CARDS --- */
       main.container {
@@ -361,7 +410,10 @@
         border-radius: var(--radius);
         padding: 18px;
         box-shadow: var(--shadow-soft);
-        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          border-color 0.18s ease;
       }
 
       .card:hover {
@@ -401,10 +453,24 @@
         color: var(--accent);
       }
 
-      .focus-card:nth-child(2) .focus-icon { background: var(--teal-soft); color: var(--accent-2); }
-      .focus-card:nth-child(3) .focus-icon { background: var(--violet-soft); color: var(--accent-3); }
-      .focus-card strong { display: block; margin-bottom: 5px; }
-      .focus-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+      .focus-card:nth-child(2) .focus-icon {
+        background: var(--teal-soft);
+        color: var(--accent-2);
+      }
+      .focus-card:nth-child(3) .focus-icon {
+        background: var(--violet-soft);
+        color: var(--accent-3);
+      }
+      .focus-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .focus-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
 
       /* --- Stacked list --- */
       .stack {
@@ -436,8 +502,12 @@
         background: linear-gradient(180deg, var(--accent), var(--accent-2));
       }
 
-      .exp-card:nth-child(2)::before { background: linear-gradient(180deg, var(--accent-3), var(--accent)); }
-      .exp-card:nth-child(3)::before { background: linear-gradient(180deg, var(--accent-2), var(--accent-3)); }
+      .exp-card:nth-child(2)::before {
+        background: linear-gradient(180deg, var(--accent-3), var(--accent));
+      }
+      .exp-card:nth-child(3)::before {
+        background: linear-gradient(180deg, var(--accent-2), var(--accent-3));
+      }
 
       .exp-header {
         display: flex;
@@ -808,9 +878,12 @@
           <div class="eyebrow">KAIST EE · NTU S-Lab Research Intern</div>
           <h1>Hi, I'm Junsu 👋</h1>
           <p>
-            My research lies at the intersection of <strong>geometry-grounded embodied AI</strong>,
-            <strong>egocentric vision</strong>, and <strong>3D/4D scene understanding</strong>, with interest in
-            3D-aware world models for tool use, physical state changes, and human-object interactions.
+            My research lies at the intersection of
+            <strong>geometry-grounded embodied AI</strong>,
+            <strong>egocentric vision</strong>, and
+            <strong>3D/4D scene understanding</strong>, with interest in
+            3D-aware world models for tool use, physical state changes, and
+            human-object interactions.
           </p>
           <div class="chips" aria-label="Research interests">
             <span class="chip">3D/4D Vision</span>
@@ -820,14 +893,18 @@
           <div class="row">
             <a class="btn primary" href="/cv.pdf" target="_blank">📄 CV</a>
             <a class="btn" href="mailto:sam9732@kaist.ac.kr">✉️ Email</a>
-            <a class="btn" href="https://github.com/JJUNOS0926" target="_blank">🐙 GitHub</a>
+            <a class="btn" href="https://github.com/JJUNOS0926" target="_blank"
+              >🐙 GitHub</a
+            >
           </div>
         </div>
         <div class="hero-visual">
           <div class="pfp-ring">
             <img src="images/profile.jpg?v=2" alt="Junsu Kim" class="pfp" />
           </div>
-          <div class="mini-note">Undergraduate researcher<br />Computer Vision · Embodied AI</div>
+          <div class="mini-note">
+            Undergraduate researcher<br />Computer Vision · Embodied AI
+          </div>
         </div>
       </div>
     </header>
@@ -845,17 +922,26 @@
           <article class="card focus-card">
             <div class="focus-icon">▧</div>
             <strong>3D/4D Scene Understanding</strong>
-            <p>Multi-view geometry, scene representations, and feed-forward reconstruction for visual understanding.</p>
+            <p>
+              Multi-view geometry, scene representations, and feed-forward
+              reconstruction for visual understanding.
+            </p>
           </article>
           <article class="card focus-card">
             <div class="focus-icon">◉</div>
             <strong>Egocentric Tool-Use Reasoning</strong>
-            <p>Understanding human-object interactions, tool choice, and physical state changes from first-person videos.</p>
+            <p>
+              Understanding human-object interactions, tool choice, and physical
+              state changes from first-person videos.
+            </p>
           </article>
           <article class="card focus-card">
             <div class="focus-icon">⌁</div>
             <strong>Dataset & Benchmark Design</strong>
-            <p>Building structured data, annotation workflows, and evaluation protocols for embodied AI research.</p>
+            <p>
+              Building structured data, annotation workflows, and evaluation
+              protocols for embodied AI research.
+            </p>
           </article>
         </div>
       </section>
@@ -870,10 +956,16 @@
         </div>
         <div class="edu-list">
           <article class="card edu-item">
-            <img class="edu-logo" src="images/edu/kaist_logo.png?v=3" alt="KAIST logo" />
+            <img
+              class="edu-logo"
+              src="images/edu/kaist_logo.png?v=3"
+              alt="KAIST logo"
+            />
             <div>
               <div class="edu-meta">
-                <div class="edu-title">Korea Advanced Institute of Science and Technology (KAIST)</div>
+                <div class="edu-title">
+                  Korea Advanced Institute of Science and Technology (KAIST)
+                </div>
                 <div class="muted">Daejeon, South Korea</div>
               </div>
               <ul class="tight">
@@ -885,14 +977,23 @@
           </article>
 
           <article class="card edu-item">
-            <img class="edu-logo edu-logo-ntu" src="images/edu/ntu_logo.jpg?v=3" alt="NTU logo" />
+            <img
+              class="edu-logo edu-logo-ntu"
+              src="images/edu/ntu_logo.jpg?v=3"
+              alt="NTU logo"
+            />
             <div>
               <div class="edu-meta">
-                <div class="edu-title">Nanyang Technological University (NTU)</div>
+                <div class="edu-title">
+                  Nanyang Technological University (NTU)
+                </div>
                 <div class="muted">Singapore</div>
               </div>
               <ul class="tight">
-                <li>Exchange Student, School of Electrical and Electronic Engineering</li>
+                <li>
+                  Exchange Student, School of Electrical and Electronic
+                  Engineering
+                </li>
                 <li>Jan 2026 – May 2026</li>
               </ul>
             </div>
@@ -915,11 +1016,17 @@
               <div class="exp-date">Jan 2026 – Present</div>
             </div>
             <p class="exp-role">
-              Research Intern (Advisor: <a href="https://liuziwei7.github.io/" target="_blank">Prof. Ziwei Liu</a>, NTU)
+              Research Intern (Advisor:
+              <a href="https://liuziwei7.github.io/" target="_blank"
+                >Prof. Ziwei Liu</a
+              >, NTU)
             </p>
             <ul class="tight">
               <li>
-                Co-leading EgoTools, a tool-centric egocentric dataset and benchmark for embodied tool-use reasoning, with focus on data collection, annotation workflows, quality control, and benchmark design.
+                Co-leading EgoTools, a tool-centric egocentric dataset and
+                benchmark for embodied tool-use reasoning, with focus on data
+                collection, annotation workflows, quality control, and benchmark
+                design.
               </li>
             </ul>
           </div>
@@ -934,14 +1041,18 @@
             </p>
             <ul class="tight">
               <li>
-                Conducting research on 3D vision: multi-view scene reconstruction pipelines integrating Gaussian Splatting and transformer-based depth estimation (VGGT / NoPoSplat).
+                Conducting research on 3D vision: multi-view scene
+                reconstruction pipelines integrating Gaussian Splatting and
+                transformer-based depth estimation (VGGT / NoPoSplat).
               </li>
             </ul>
           </div>
 
           <div class="card exp-card">
             <div class="exp-header">
-              <div class="exp-title">Video and Image Computing Lab (VICLAB), KAIST</div>
+              <div class="exp-title">
+                Video and Image Computing Lab (VICLAB), KAIST
+              </div>
               <div class="exp-date">Dec 2024 – Jun 2025</div>
             </div>
             <p class="exp-role">
@@ -949,7 +1060,10 @@
             </p>
             <ul class="tight">
               <li>Reviewed object detection models (RCNN–YOLO, ViT).</li>
-              <li>Implemented baseline detectors for few-shot and anomaly detection tasks.</li>
+              <li>
+                Implemented baseline detectors for few-shot and anomaly
+                detection tasks.
+              </li>
             </ul>
           </div>
         </div>
@@ -967,12 +1081,18 @@
           <article class="card pub-card">
             <div class="pub-num">1</div>
             <div>
-              <div class="pub-title">EgoTools: Tool-Centric Reasoning in Real-World Egocentric Videos.</div>
+              <div class="pub-title">
+                EgoTools: Tool-Centric Reasoning in Real-World Egocentric
+                Videos.
+              </div>
               <div class="pub-authors">
-                Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu, Hao Li, Shen Yujiao, Sihan Li, Zhe Yang, Yeongon Kim, Runmao Yao, Yuhao Dong, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan Zhu, Ziwei Liu.
+                Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu, Hao Li,
+                Shen Yujiao, Sihan Li, Zhe Yang, Yeongon Kim, Runmao Yao, Yuhao
+                Dong, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan
+                Zhu, Ziwei Liu.
               </div>
               <div class="pub-meta">
-                <span class="venue">NeurIPS 2026 · Under review</span>
+                <span class="venue">EMNLP 2026 · Under review</span>
                 <span class="tag">Dataset & Benchmark</span>
                 <span class="tag">Egocentric Vision</span>
               </div>
@@ -982,14 +1102,28 @@
           <article class="card pub-card">
             <div class="pub-num">2</div>
             <div>
-              <div class="pub-title">C3G: Learning Compact 3D Representations from Feed-Forward Novel View Synthesis.</div>
+              <div class="pub-title">
+                C3G: Learning Compact 3D Representations from Feed-Forward Novel
+                View Synthesis.
+              </div>
               <div class="pub-authors">
-                Honggyu An*, Jaewoo Jung*, ..., Hyunah Ko, <strong>Junsu Kim</strong>, ..., Seungryong Kim.
+                Honggyu An*, Jaewoo Jung*, ..., Hyunah Ko,
+                <strong>Junsu Kim</strong>, ..., Seungryong Kim.
               </div>
               <div class="pub-meta">
                 <span class="venue secondary">CVPR 2026</span>
-                <a class="tag" href="https://cvlab-kaist.github.io/C3G/" target="_blank">Project Page</a>
-                <a class="tag" href="https://arxiv.org/abs/2512.04021" target="_blank">Paper</a>
+                <a
+                  class="tag"
+                  href="https://cvlab-kaist.github.io/C3G/"
+                  target="_blank"
+                  >Project Page</a
+                >
+                <a
+                  class="tag"
+                  href="https://arxiv.org/abs/2512.04021"
+                  target="_blank"
+                  >Paper</a
+                >
               </div>
             </div>
           </article>
@@ -1007,20 +1141,32 @@
         </div>
         <div class="stack">
           <div class="card">
-            <strong>FaceVerify-AM: Face Verification with AM-Softmax (EE.40034, KAIST)</strong>
+            <strong
+              >FaceVerify-AM: Face Verification with AM-Softmax (EE.40034,
+              KAIST)</strong
+            >
             <p class="muted">
-              Two-stage metric-learning pipeline for face verification using ResNet-18 and AM-Softmax.
+              Two-stage metric-learning pipeline for face verification using
+              ResNet-18 and AM-Softmax.
             </p>
             <ul class="tight">
               <li>Scratch training → fine-tuning structured training design</li>
-              <li>Ablation on loss, optimizer, LR scheduler, and augmentation strategies</li>
+              <li>
+                Ablation on loss, optimizer, LR scheduler, and augmentation
+                strategies
+              </li>
               <li>Achieved 8.02% EER (baseline: 22.31%)</li>
             </ul>
             <div class="row">
               <span class="tag">Computer Vision</span>
               <span class="tag">Metric Learning</span>
               <span class="tag">Face Verification</span>
-              <a class="tag" href="https://github.com/JJUNOS0926/EE40034-DLVU-Final-Project" target="_blank">GitHub</a>
+              <a
+                class="tag"
+                href="https://github.com/JJUNOS0926/EE40034-DLVU-Final-Project"
+                target="_blank"
+                >GitHub</a
+              >
             </div>
           </div>
         </div>
@@ -1037,31 +1183,49 @@
         <div class="card accent">
           <ul class="kv">
             <li>
-              <span class="k">KAIST <strong>Presidential Fellowship</strong> (15th)</span>
+              <span class="k"
+                >KAIST <strong>Presidential Fellowship</strong> (15th)</span
+              >
               <span class="v">Feb 2025 – Present</span>
             </li>
             <li class="with-sub">
-              <span class="k">KAIST EE, <strong>Dean’s List Award</strong></span>
+              <span class="k"
+                >KAIST EE, <strong>Dean’s List Award</strong></span
+              >
               <span class="v">Spring 2024</span>
               <span class="sub">Awarded to the top 3% of all EE students</span>
             </li>
             <li class="with-sub">
-              <span class="k">KAIST, <strong>Freshman Dean’s List Award</strong></span>
+              <span class="k"
+                >KAIST, <strong>Freshman Dean’s List Award</strong></span
+              >
               <span class="v">Fall 2021</span>
-              <span class="sub">Awarded to the top 3% of all freshman students</span>
+              <span class="sub"
+                >Awarded to the top 3% of all freshman students</span
+              >
             </li>
             <li>
-              <span class="k">Woon Hae <strong>Scholarship</strong> (12th)</span>
+              <span class="k"
+                >Woon Hae <strong>Scholarship</strong> (12th)</span
+              >
               <span class="v">Feb 2025 – Dec 2025</span>
             </li>
             <li>
-              <span class="k">National Science & Engineering Scholarship for Academic Excellence</span>
+              <span class="k"
+                >National Science & Engineering Scholarship for Academic
+                Excellence</span
+              >
               <span class="v">Aug 2025 – Present</span>
             </li>
             <li class="with-sub">
-              <span class="k">KAIST Shared Lives Award (Top-ranked Recipient)</span>
+              <span class="k"
+                >KAIST Shared Lives Award (Top-ranked Recipient)</span
+              >
               <span class="v">Feb 2026</span>
-              <span class="sub">For exceptional and sustained blood donation service (20 donations in one year)</span>
+              <span class="sub"
+                >For exceptional and sustained blood donation service (20
+                donations in one year)</span
+              >
             </li>
           </ul>
         </div>
@@ -1078,7 +1242,10 @@
         <div class="card">
           <ul class="kv activities">
             <li>
-              <span class="k">KAIST AI Studying Club (Include) · Google Student Ambassador</span>
+              <span class="k"
+                >KAIST AI Studying Club (Include) · Google Student
+                Ambassador</span
+              >
               <span class="v">Sep 2024 – Dec 2025</span>
             </li>
             <li>
@@ -1090,12 +1257,15 @@
               <span class="v">Sep 2024 – Dec 2025</span>
             </li>
             <li>
-              <span class="k">KAIST Freshman Proctor / Freshman Tutoring Program</span>
+              <span class="k"
+                >KAIST Freshman Proctor / Freshman Tutoring Program</span
+              >
               <span class="v">Mar 2022 – Dec 2024</span>
             </li>
           </ul>
           <p class="muted" style="margin-top: 12px">
-            More activities available in <a href="/cv.pdf" target="_blank">CV</a>.
+            More activities available in
+            <a href="/cv.pdf" target="_blank">CV</a>.
           </p>
         </div>
       </section>
@@ -1110,10 +1280,15 @@
         </div>
         <div class="skill-grid">
           <div class="card skill-card">
-            <p><strong>Programming:</strong> Python, C/C++, PyTorch, Git, LaTeX</p>
+            <p>
+              <strong>Programming:</strong> Python, C/C++, PyTorch, Git, LaTeX
+            </p>
           </div>
           <div class="card skill-card">
-            <p><strong>Research Tools:</strong> video preprocessing, dataset curation, annotation pipelines, evaluation scripts</p>
+            <p>
+              <strong>Research Tools:</strong> video preprocessing, dataset
+              curation, annotation pipelines, evaluation scripts
+            </p>
           </div>
           <div class="card skill-card">
             <p><strong>Languages:</strong> Korean (Native), English (Fluent)</p>
@@ -1132,7 +1307,9 @@
         if (t === "auto") {
           root.setAttribute(
             "data-theme",
-            matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light",
+            matchMedia("(prefers-color-scheme:dark)").matches
+              ? "dark"
+              : "light",
           );
         } else {
           root.setAttribute("data-theme", t);
@@ -1154,7 +1331,9 @@
         if (btn) {
           const refreshLabel = () =>
             (btn.textContent =
-              document.documentElement.getAttribute("data-theme") === "dark" ? "☀️ Light" : "🌙 Dark");
+              document.documentElement.getAttribute("data-theme") === "dark"
+                ? "☀️ Light"
+                : "🌙 Dark");
           btn.onclick = () => {
             const cur = document.documentElement.getAttribute("data-theme");
             const next = cur === "light" ? "dark" : "light";
@@ -1178,7 +1357,8 @@
 
         document.addEventListener("click", (e) => {
           if (!navMenu.classList.contains("open")) return;
-          const inside = navMenu.contains(e.target) || navBtn.contains(e.target);
+          const inside =
+            navMenu.contains(e.target) || navBtn.contains(e.target);
           if (!inside) {
             navMenu.classList.remove("open");
             navBtn.setAttribute("aria-expanded", "false");

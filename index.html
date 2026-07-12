@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Junsu Kim — Homepage</title>
+    <title>Junsu Kim — Research Homepage</title>
     <meta
       name="description"
-      content="Junsu Kim — KAIST EE undergraduate and NTU S-Lab (MMLab) research intern. Research in geometry-grounded embodied AI, egocentric vision, and 3D/4D scene understanding."
+      content="Junsu Kim is a KAIST EE undergraduate researcher studying egocentric and embodied AI, latent-action and world models, and 3D/4D scene understanding."
     />
+    <meta name="theme-color" content="#f8fafc" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -17,7 +18,7 @@
     <style>
       :root {
         --bg: #f8fafc;
-        --surface: rgba(255, 255, 255, 0.82);
+        --surface: rgba(255, 255, 255, 0.84);
         --surface-solid: #ffffff;
         --text: #101827;
         --muted: #64748b;
@@ -30,13 +31,13 @@
         --teal-soft: rgba(15, 118, 110, 0.09);
         --violet-soft: rgba(124, 58, 237, 0.09);
         --shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
-        --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.06);
-        --radius: 22px;
+        --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.055);
+        --radius: 20px;
       }
 
       [data-theme="dark"] {
         --bg: #080d16;
-        --surface: rgba(15, 23, 42, 0.78);
+        --surface: rgba(15, 23, 42, 0.8);
         --surface-solid: #0f172a;
         --text: #e5e7eb;
         --muted: #a3b3c8;
@@ -62,30 +63,29 @@
 
       body {
         margin: 0;
-        padding: 0;
         font-family:
           "Inter",
           system-ui,
           -apple-system,
-          Segoe UI,
-          Roboto,
+          BlinkMacSystemFont,
+          "Segoe UI",
           sans-serif;
         color: var(--text);
         background:
           radial-gradient(
-            circle at 15% 8%,
-            rgba(37, 99, 235, 0.12),
-            transparent 28%
+            circle at 12% 5%,
+            rgba(37, 99, 235, 0.11),
+            transparent 27%
           ),
           radial-gradient(
-            circle at 88% 5%,
-            rgba(124, 58, 237, 0.09),
-            transparent 26%
+            circle at 92% 7%,
+            rgba(124, 58, 237, 0.08),
+            transparent 25%
           ),
           radial-gradient(
-            circle at 80% 42%,
-            rgba(15, 118, 110, 0.08),
-            transparent 26%
+            circle at 84% 46%,
+            rgba(15, 118, 110, 0.07),
+            transparent 24%
           ),
           var(--bg);
       }
@@ -115,13 +115,13 @@
         padding: 20px 18px;
       }
 
-      /* --- NAV --- */
+      /* ===== Navigation ===== */
       nav {
         position: sticky;
         top: 0;
-        z-index: 10;
+        z-index: 20;
         backdrop-filter: blur(18px);
-        background: color-mix(in srgb, var(--bg) 80%, transparent);
+        background: color-mix(in srgb, var(--bg) 82%, transparent);
         border-bottom: 1px solid var(--border);
       }
 
@@ -130,16 +130,21 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 11px;
+        padding-bottom: 11px;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 9px;
+        color: var(--text);
         font-weight: 800;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.025em;
+      }
+
+      .brand:hover {
+        color: var(--text);
       }
 
       .brand-dot {
@@ -153,16 +158,15 @@
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
       }
 
       .nav-links a,
       .nav-links .toggle {
-        margin-left: 0;
         color: var(--muted);
-        padding: 8px 10px;
+        padding: 8px 9px;
         border-radius: 999px;
-        font-size: 14px;
+        font-size: 13px;
         border: 1px solid transparent;
       }
 
@@ -184,9 +188,9 @@
         font: inherit;
       }
 
-      /* --- HERO --- */
+      /* ===== Hero ===== */
       .hero-wrap {
-        padding: 34px 18px 14px;
+        padding: 44px 18px 14px;
       }
 
       .hero {
@@ -194,38 +198,39 @@
         overflow: hidden;
         max-width: 1040px;
         margin: 0 auto;
-        padding: 36px;
+        padding: 42px;
         border: 1px solid var(--border);
-        border-radius: calc(var(--radius) + 8px);
+        border-radius: 28px;
         background:
           linear-gradient(
             135deg,
-            color-mix(in srgb, var(--surface-solid) 90%, transparent),
-            color-mix(in srgb, var(--surface-solid) 70%, transparent)
+            color-mix(in srgb, var(--surface-solid) 92%, transparent),
+            color-mix(in srgb, var(--surface-solid) 72%, transparent)
           ),
-          radial-gradient(circle at 0% 0%, var(--accent-soft), transparent 38%),
+          radial-gradient(circle at 0% 0%, var(--accent-soft), transparent 40%),
           radial-gradient(
             circle at 100% 100%,
             var(--teal-soft),
-            transparent 34%
+            transparent 36%
           );
         box-shadow: var(--shadow);
         display: grid;
-        grid-template-columns: minmax(0, 1.65fr) 220px;
-        gap: 30px;
+        grid-template-columns: minmax(0, 1fr) 205px;
+        gap: 34px;
         align-items: center;
       }
 
       .hero::after {
         content: "";
         position: absolute;
-        inset: auto -70px -110px auto;
-        width: 260px;
-        height: 260px;
+        right: -95px;
+        bottom: -130px;
+        width: 300px;
+        height: 300px;
         border-radius: 999px;
         background: radial-gradient(
           circle,
-          rgba(37, 99, 235, 0.12),
+          rgba(37, 99, 235, 0.13),
           transparent 70%
         );
         pointer-events: none;
@@ -246,18 +251,29 @@
       }
 
       .hero h1 {
-        font-size: clamp(34px, 6vw, 58px);
-        line-height: 0.98;
-        letter-spacing: -0.055em;
+        max-width: 760px;
         margin: 18px 0 14px;
+        font-size: clamp(38px, 6vw, 64px);
+        line-height: 1.02;
+        letter-spacing: -0.058em;
       }
 
-      .hero p {
+      .hero .research-line {
+        margin: 0 0 16px;
+        max-width: 760px;
+        color: var(--text);
+        font-size: clamp(17px, 2.1vw, 21px);
+        line-height: 1.55;
+        letter-spacing: -0.018em;
+        font-weight: 600;
+      }
+
+      .hero .bio {
+        margin: 0;
+        max-width: 750px;
         color: var(--muted);
-        margin: 0 0 18px;
-        font-size: 17px;
-        line-height: 1.62;
-        max-width: 710px;
+        font-size: 16px;
+        line-height: 1.7;
       }
 
       .hero strong {
@@ -273,7 +289,6 @@
       }
 
       .pfp-ring {
-        position: relative;
         padding: 7px;
         border-radius: 999px;
         background: linear-gradient(
@@ -286,8 +301,8 @@
       }
 
       .pfp {
-        width: 174px;
-        height: 174px;
+        width: 166px;
+        height: 166px;
         border-radius: 50%;
         object-fit: cover;
         object-position: 50% 35%;
@@ -298,50 +313,15 @@
       .mini-note {
         text-align: center;
         color: var(--muted);
-        font-size: 13px;
-        line-height: 1.35;
-      }
-
-      .row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--surface-solid);
-        color: var(--text);
-        font-weight: 650;
-        box-shadow: var(--shadow-soft);
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
-      }
-
-      .btn.primary {
-        background: linear-gradient(
-          135deg,
-          var(--accent),
-          color-mix(in srgb, var(--accent-3) 78%, var(--accent))
-        );
-        color: #fff;
-        border-color: transparent;
+        font-size: 12px;
+        line-height: 1.45;
       }
 
       .chips {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin: 16px 0 22px;
+        margin: 20px 0 22px;
       }
 
       .chip,
@@ -355,29 +335,76 @@
       }
 
       .chip:nth-child(1) {
-        border-color: color-mix(in srgb, var(--accent) 26%, var(--border));
         color: var(--accent);
+        border-color: color-mix(in srgb, var(--accent) 26%, var(--border));
         background: var(--accent-soft);
       }
+
       .chip:nth-child(2) {
-        border-color: color-mix(in srgb, var(--accent-2) 26%, var(--border));
         color: var(--accent-2);
+        border-color: color-mix(in srgb, var(--accent-2) 26%, var(--border));
         background: var(--teal-soft);
       }
+
       .chip:nth-child(3) {
-        border-color: color-mix(in srgb, var(--accent-3) 26%, var(--border));
         color: var(--accent-3);
+        border-color: color-mix(in srgb, var(--accent-3) 26%, var(--border));
         background: var(--violet-soft);
       }
 
-      /* --- SECTIONS / CARDS --- */
+      .chip:nth-child(4) {
+        color: var(--text);
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface-solid);
+        color: var(--text);
+        font-weight: 650;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        color: var(--text);
+        border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+      }
+
+      .btn.primary {
+        color: #fff;
+        border-color: transparent;
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          color-mix(in srgb, var(--accent-3) 78%, var(--accent))
+        );
+      }
+
+      /* ===== Sections ===== */
       main.container {
-        padding-top: 6px;
+        padding-top: 8px;
       }
 
       section {
         padding: 34px 0;
         border-top: 1px solid var(--border);
+        scroll-margin-top: 80px;
+      }
+
+      section:first-child {
+        border-top: none;
       }
 
       .section-head {
@@ -385,30 +412,38 @@
         align-items: end;
         justify-content: space-between;
         gap: 16px;
-        margin-bottom: 16px;
-      }
-
-      h2 {
-        margin: 0;
-        font-size: 25px;
-        letter-spacing: -0.035em;
+        margin-bottom: 17px;
       }
 
       .section-kicker {
+        margin-bottom: 6px;
         color: var(--accent);
         font-size: 12px;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin-bottom: 6px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 25px;
+        letter-spacing: -0.038em;
+      }
+
+      .section-note {
+        max-width: 520px;
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
       }
 
       .card {
         position: relative;
-        background: var(--surface);
+        padding: 18px;
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 18px;
+        background: var(--surface);
         box-shadow: var(--shadow-soft);
         transition:
           transform 0.18s ease,
@@ -422,76 +457,172 @@
         border-color: color-mix(in srgb, var(--accent) 24%, var(--border));
       }
 
-      .card.accent {
-        border-left: 5px solid var(--accent);
-      }
-
       .muted {
         color: var(--muted);
       }
 
-      /* --- Focus cards --- */
+      .stack {
+        display: grid;
+        gap: 15px;
+      }
+
+      ul.tight {
+        margin: 9px 0 0;
+        padding-left: 19px;
+      }
+
+      ul.tight li {
+        margin: 6px 0;
+        line-height: 1.55;
+      }
+
+      /* ===== Updates ===== */
+      .updates-card {
+        padding: 8px 18px;
+      }
+
+      .update-item {
+        display: grid;
+        grid-template-columns: 106px 1fr;
+        gap: 16px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .update-item:last-child {
+        border-bottom: none;
+      }
+
+      .update-date {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .update-text {
+        line-height: 1.52;
+      }
+
+      /* ===== Research focus ===== */
       .focus-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
-        margin-top: 20px;
       }
 
       .focus-card {
-        padding: 16px;
+        padding: 18px;
       }
 
-      .focus-icon {
-        width: 38px;
-        height: 38px;
+      .focus-index {
+        width: 36px;
+        height: 36px;
         display: grid;
         place-items: center;
-        border-radius: 13px;
-        margin-bottom: 11px;
-        background: var(--accent-soft);
+        margin-bottom: 12px;
+        border-radius: 12px;
         color: var(--accent);
+        background: var(--accent-soft);
+        font-size: 12px;
+        font-weight: 800;
       }
 
-      .focus-card:nth-child(2) .focus-icon {
-        background: var(--teal-soft);
+      .focus-card:nth-child(2) .focus-index {
         color: var(--accent-2);
+        background: var(--teal-soft);
       }
-      .focus-card:nth-child(3) .focus-icon {
-        background: var(--violet-soft);
+
+      .focus-card:nth-child(3) .focus-index {
         color: var(--accent-3);
+        background: var(--violet-soft);
       }
+
       .focus-card strong {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
+        letter-spacing: -0.02em;
       }
+
       .focus-card p {
         margin: 0;
         color: var(--muted);
         font-size: 14px;
-        line-height: 1.5;
+        line-height: 1.55;
       }
 
-      /* --- Stacked list --- */
-      .stack {
+      /* ===== Publications ===== */
+      .pub-list {
         display: grid;
-        gap: 16px;
+        gap: 14px;
       }
 
-      ul.tight {
-        margin: 8px 0 0;
-        padding-left: 18px;
+      .pub-card {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 14px;
+        align-items: start;
       }
 
-      ul.tight li {
-        margin: 5px 0;
+      .pub-num {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        color: #fff;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      }
+
+      .pub-title {
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.36;
+      }
+
+      .pub-authors {
+        margin-top: 6px;
+        color: var(--muted);
         line-height: 1.5;
       }
 
-      /* --- Experience --- */
+      .pub-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .venue {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+        border-radius: 999px;
+        color: var(--accent);
+        background: var(--accent-soft);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .venue.secondary {
+        color: var(--accent-2);
+        background: var(--teal-soft);
+        border-color: color-mix(in srgb, var(--accent-2) 24%, var(--border));
+      }
+
+      .equal-note {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* ===== Experience ===== */
       .exp-card {
-        padding-left: 22px;
         overflow: hidden;
+        padding-left: 23px;
       }
 
       .exp-card::before {
@@ -505,20 +636,21 @@
       .exp-card:nth-child(2)::before {
         background: linear-gradient(180deg, var(--accent-3), var(--accent));
       }
+
       .exp-card:nth-child(3)::before {
         background: linear-gradient(180deg, var(--accent-2), var(--accent-3));
       }
 
       .exp-header {
         display: flex;
-        justify-content: space-between;
         align-items: baseline;
+        justify-content: space-between;
         gap: 12px;
       }
 
       .exp-title {
-        font-weight: 800;
         font-size: 1.05rem;
+        font-weight: 800;
         letter-spacing: -0.02em;
       }
 
@@ -526,35 +658,35 @@
         color: var(--muted);
         white-space: nowrap;
         text-align: right;
-        font-size: 0.95rem;
+        font-size: 0.94rem;
       }
 
       .exp-role {
-        color: var(--muted);
         margin: 7px 0 0;
+        color: var(--muted);
       }
 
-      /* --- Education cards --- */
+      /* ===== Education ===== */
       .edu-list {
         display: grid;
-        gap: 16px;
+        gap: 15px;
       }
 
       .edu-item {
         display: grid;
-        grid-template-columns: 112px 1fr;
+        grid-template-columns: 104px 1fr;
         gap: 18px;
         align-items: start;
       }
 
       .edu-logo {
-        width: 90px;
-        height: 60px;
-        border-radius: 14px;
+        width: 88px;
+        height: 58px;
         object-fit: contain;
-        background: #fff;
-        border: 1px solid var(--border);
         padding: 6px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #fff;
         box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
       }
 
@@ -563,7 +695,7 @@
       }
 
       .edu-title {
-        font-size: 19px;
+        font-size: 18px;
         font-weight: 800;
         letter-spacing: -0.02em;
       }
@@ -571,84 +703,16 @@
       .edu-meta {
         display: flex;
         justify-content: space-between;
-        color: var(--muted);
+        gap: 8px;
         margin: 2px 0 6px;
-        gap: 8px;
-      }
-
-      /* --- Publications --- */
-      .pub-list {
-        display: grid;
-        gap: 14px;
-      }
-
-      .pub-card {
-        display: grid;
-        grid-template-columns: 38px 1fr;
-        gap: 14px;
-        align-items: start;
-      }
-
-      .pub-num {
-        width: 34px;
-        height: 34px;
-        display: grid;
-        place-items: center;
-        border-radius: 12px;
-        color: #fff;
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--accent), var(--accent-3));
-      }
-
-      .pub-title {
-        font-weight: 800;
-        letter-spacing: -0.025em;
-        line-height: 1.35;
-      }
-
-      .pub-authors {
         color: var(--muted);
-        margin-top: 6px;
-        line-height: 1.5;
       }
 
-      .pub-meta {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: 10px;
-      }
-
-      .venue {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--accent);
-        background: var(--accent-soft);
-        border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
-        border-radius: 999px;
-        padding: 5px 10px;
-      }
-
-      .venue.secondary {
-        color: var(--accent-2);
-        background: var(--teal-soft);
-        border-color: color-mix(in srgb, var(--accent-2) 24%, var(--border));
-      }
-
-      .equal-note {
-        margin-top: 12px;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      /* --- Key / value two-column list --- */
+      /* ===== Key-value lists ===== */
       ul.kv {
         list-style: none;
         margin: 0;
-        padding-left: 0;
+        padding: 0;
       }
 
       ul.kv li {
@@ -656,11 +720,11 @@
         grid-template-columns: 1fr auto;
         align-items: baseline;
         gap: 16px;
-        margin: 7px 0;
+        margin: 8px 0;
       }
 
       ul.kv .k {
-        line-height: 1.35;
+        line-height: 1.4;
       }
 
       ul.kv .v {
@@ -671,21 +735,17 @@
 
       ul.kv .sub {
         grid-column: 1 / -1;
-        color: var(--muted);
-        font-style: italic;
+        margin-top: -3px;
         margin-left: 0.75rem;
-        margin-top: -2px;
-        font-size: 14px;
+        color: var(--muted);
+        font-size: 13px;
+        font-style: italic;
         line-height: 1.4;
-      }
-
-      ul.kv.activities li {
-        margin: 5px 0;
       }
 
       .skill-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 12px;
       }
 
@@ -699,17 +759,19 @@
         color: var(--text);
       }
 
-      /* --- Footer --- */
+      /* ===== Footer ===== */
       .foot {
-        padding: 34px 0;
+        max-width: 1040px;
+        margin: 24px auto 0;
+        padding: 34px 18px;
+        border-top: 1px solid var(--border);
         color: var(--muted);
         text-align: center;
-        border-top: 1px solid var(--border);
-        margin-top: 24px;
+        font-size: 13px;
       }
 
-      /* ====== Responsive ====== */
-      @media (max-width: 820px) {
+      /* ===== Responsive ===== */
+      @media (max-width: 860px) {
         .nav-toggle {
           display: inline-flex;
         }
@@ -717,13 +779,13 @@
         .nav-links {
           display: none;
           position: absolute;
-          right: 18px;
           top: 64px;
-          background: var(--surface-solid);
+          right: 18px;
+          width: min(88vw, 340px);
+          padding: 10px;
           border: 1px solid var(--border);
           border-radius: 18px;
-          padding: 10px;
-          width: min(88vw, 340px);
+          background: var(--surface-solid);
           box-shadow: var(--shadow);
         }
 
@@ -735,15 +797,15 @@
         .nav-links .toggle {
           display: block;
           width: 100%;
-          text-align: left;
-          margin: 4px 0 0 0;
+          margin: 4px 0 0;
           padding: 11px 12px;
           border-radius: 12px;
+          text-align: left;
         }
 
         .hero {
           grid-template-columns: 1fr;
-          padding: 28px;
+          padding: 30px;
         }
 
         .hero-visual {
@@ -755,8 +817,50 @@
           height: 132px;
         }
 
-        .focus-grid {
+        .mini-note {
+          text-align: left;
+        }
+
+        .focus-grid,
+        .skill-grid {
           grid-template-columns: 1fr;
+        }
+
+        .edu-meta,
+        .exp-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+        }
+
+        .exp-date {
+          text-align: left;
+          white-space: normal;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .container,
+        .hero-wrap {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        .hero-wrap {
+          padding-top: 28px;
+        }
+
+        .hero {
+          padding: 23px;
+          border-radius: 24px;
+        }
+
+        .hero h1 {
+          font-size: 39px;
+        }
+
+        h2 {
+          font-size: 22px;
         }
 
         .row {
@@ -768,53 +872,9 @@
           width: 100%;
         }
 
-        .edu-item {
-          grid-template-columns: 84px 1fr;
-          padding: 15px;
-        }
-
-        .edu-logo {
-          width: 72px;
-          height: 48px;
-          border-radius: 12px;
-          padding: 5px;
-        }
-
-        .edu-logo-ntu {
-          padding: 2px;
-        }
-
-        .edu-meta,
-        .exp-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 5px;
-        }
-
-        .exp-date {
-          white-space: normal;
-          text-align: left;
-        }
-
-        .skill-grid {
+        .update-item {
           grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .container,
-        .hero-wrap {
-          padding-left: 14px;
-          padding-right: 14px;
-        }
-
-        .hero {
-          border-radius: 24px;
-          padding: 22px;
-        }
-
-        h2 {
-          font-size: 22px;
+          gap: 5px;
         }
 
         .edu-item,
@@ -822,9 +882,9 @@
           grid-template-columns: 1fr;
         }
 
-        .pub-num {
-          width: 32px;
-          height: 32px;
+        .edu-logo {
+          width: 78px;
+          height: 52px;
         }
 
         ul.kv li {
@@ -840,11 +900,15 @@
       }
     </style>
   </head>
+
   <body>
-    <!-- ===== NAV ===== -->
+    <!-- ===== Navigation ===== -->
     <nav>
       <div class="container nav-row">
-        <div class="brand"><span class="brand-dot"></span>Junsu Kim</div>
+        <a class="brand" href="#top">
+          <span class="brand-dot"></span>
+          Junsu Kim
+        </a>
 
         <button
           id="navToggle"
@@ -856,14 +920,13 @@
         </button>
 
         <div id="navMenu" class="nav-links">
-          <a href="#education">Education</a>
-          <a href="#experience">Research</a>
+          <a href="#updates">Updates</a>
+          <a href="#research">Research</a>
           <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
           <a href="#honors">Honors</a>
-          <a href="#activities">Activities</a>
-          <a href="#skills">Skills</a>
-          <a href="/cv.pdf" target="_blank">CV</a>
+          <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
           <button id="themeBtn" class="toggle" aria-label="Toggle theme">
             🌙 Dark
           </button>
@@ -871,82 +934,287 @@
       </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <header class="hero-wrap">
+    <!-- ===== Hero ===== -->
+    <header id="top" class="hero-wrap">
       <div class="hero">
         <div>
-          <div class="eyebrow">KAIST EE · NTU S-Lab Research Intern</div>
-          <h1>Hi, I'm Junsu 👋</h1>
-          <p>
-            My research lies at the intersection of
-            <strong>geometry-grounded embodied AI</strong>,
-            <strong>egocentric vision</strong>, and
-            <strong>3D/4D scene understanding</strong>, with interest in
-            3D-aware world models for tool use, physical state changes, and
-            human-object interactions.
+          <div class="eyebrow">KAIST EE · NTU S-Lab (MMLab)</div>
+          <h1>Understanding how actions transform the physical world.</h1>
+          <p class="research-line">
+            I build <strong>egocentric and embodied AI systems</strong> that
+            reason about tool use, physical interaction, and action-driven state
+            changes.
           </p>
+          <p class="bio">
+            I am an undergraduate researcher in Electrical Engineering at
+            <strong>KAIST</strong> and a research intern at
+            <strong>NTU S-Lab (MMLab)</strong>. My work spans tool-centric
+            egocentric video, latent-action and world models, and 3D/4D scene
+            understanding. I am particularly interested in connecting human
+            video and robot experience to build models that understand not only
+            <em>what</em> is visible, but <em>how actions change the world</em>.
+          </p>
+
           <div class="chips" aria-label="Research interests">
-            <span class="chip">3D/4D Vision</span>
             <span class="chip">Egocentric Vision</span>
+            <span class="chip">Latent Action & World Models</span>
+            <span class="chip">3D/4D Vision</span>
             <span class="chip">Embodied AI</span>
           </div>
+
           <div class="row">
-            <a class="btn primary" href="/cv.pdf" target="_blank">📄 CV</a>
-            <a class="btn" href="mailto:sam9732@kaist.ac.kr">✉️ Email</a>
-            <a class="btn" href="https://github.com/JJUNOS0926" target="_blank"
-              >🐙 GitHub</a
+            <a class="btn primary" href="/cv.pdf" target="_blank" rel="noopener"
+              >CV</a
+            >
+            <a class="btn" href="mailto:sam9732@kaist.ac.kr">Email</a>
+            <a
+              class="btn"
+              href="https://github.com/JJUNOS0926"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
             >
           </div>
         </div>
+
         <div class="hero-visual">
           <div class="pfp-ring">
             <img src="images/profile.jpg?v=2" alt="Junsu Kim" class="pfp" />
           </div>
           <div class="mini-note">
-            Undergraduate researcher<br />Computer Vision · Embodied AI
+            Physical interaction · Tool use<br />Video and world models
           </div>
         </div>
       </div>
     </header>
 
     <main class="container">
-      <!-- ===== FOCUS ===== -->
-      <section id="focus">
+      <!-- ===== Updates ===== -->
+      <section id="updates">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Research Focus</div>
-            <h2>What I work on</h2>
+            <div class="section-kicker">Updates</div>
+            <h2>Recent news</h2>
           </div>
         </div>
+
+        <div class="card updates-card">
+          <div class="update-item">
+            <div class="update-date">Feb 2026</div>
+            <div class="update-text">
+              <strong>C3G</strong> was accepted to CVPR 2026.
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">Jan–May 2026</div>
+            <div class="update-text">
+              Conducted research at NTU S-Lab (MMLab) under Prof. Ziwei Liu
+              during an exchange semester in Singapore.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Research Focus ===== -->
+      <section id="research">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Research</div>
+            <h2>Three connected research threads</h2>
+            <p class="section-note">
+              My projects are connected by one question: how can AI understand
+              the physical consequences of actions in real-world environments?
+            </p>
+          </div>
+        </div>
+
         <div class="focus-grid">
           <article class="card focus-card">
-            <div class="focus-icon">▧</div>
-            <strong>3D/4D Scene Understanding</strong>
-            <p>
-              Multi-view geometry, scene representations, and feed-forward
-              reconstruction for visual understanding.
-            </p>
-          </article>
-          <article class="card focus-card">
-            <div class="focus-icon">◉</div>
+            <div class="focus-index">01</div>
             <strong>Egocentric Tool-Use Reasoning</strong>
             <p>
-              Understanding human-object interactions, tool choice, and physical
-              state changes from first-person videos.
+              Understanding why tools are selected, how they interact with
+              target objects, and how physical states evolve in first-person
+              video.
             </p>
           </article>
+
           <article class="card focus-card">
-            <div class="focus-icon">⌁</div>
-            <strong>Dataset & Benchmark Design</strong>
+            <div class="focus-index">02</div>
+            <strong>Latent Action & World Models</strong>
             <p>
-              Building structured data, annotation workflows, and evaluation
-              protocols for embodied AI research.
+              Learning action-centric representations from video priors and
+              modeling how possible actions transform future world states.
+            </p>
+          </article>
+
+          <article class="card focus-card">
+            <div class="focus-index">03</div>
+            <strong>3D/4D Scene Understanding</strong>
+            <p>
+              Building geometry-aware scene representations for dynamic visual
+              understanding, reconstruction, and embodied interaction.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- ===== EDUCATION ===== -->
+      <!-- ===== Publications ===== -->
+      <section id="publications">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Publications</div>
+            <h2>Selected work</h2>
+          </div>
+        </div>
+
+        <div class="pub-list">
+          <article class="card pub-card">
+            <div class="pub-num">1</div>
+            <div>
+              <div class="pub-title">
+                EgoTools: Tool-Centric Reasoning in Real-World Egocentric
+                Videos.
+              </div>
+              <div class="pub-authors">
+                Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu, Hao Li,
+                Yujiao Shen, Sihan Li, Zhe Yang, Yeongon Kim, Runmao Yao, Yuhao
+                Dong, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan
+                Zhu, Ziwei Liu.
+              </div>
+              <div class="pub-meta">
+                <span class="venue">ACL ARR 2026 May · Under review</span>
+                <span class="tag">Dataset & Benchmark</span>
+                <span class="tag">Egocentric Vision</span>
+                <span class="tag">Tool-Use Reasoning</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card pub-card">
+            <div class="pub-num">2</div>
+            <div>
+              <div class="pub-title">
+                C3G: Learning Compact 3D Representations from Feed-Forward Novel
+                View Synthesis.
+              </div>
+              <div class="pub-authors">
+                Honggyu An*, Jaewoo Jung*, ..., Hyunah Ko,
+                <strong>Junsu Kim</strong>, ..., Seungryong Kim.
+              </div>
+              <div class="pub-meta">
+                <span class="venue secondary">CVPR 2026</span>
+                <a
+                  class="tag"
+                  href="https://cvlab-kaist.github.io/C3G/"
+                  target="_blank"
+                  rel="noopener"
+                  >Project Page</a
+                >
+                <a
+                  class="tag"
+                  href="https://arxiv.org/abs/2512.04021"
+                  target="_blank"
+                  rel="noopener"
+                  >Paper</a
+                >
+                <span class="tag">3D Representation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="equal-note">* Equal contribution.</p>
+      </section>
+
+      <!-- ===== Research Experience ===== -->
+      <section id="experience">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2>Research roles</h2>
+          </div>
+        </div>
+
+        <div class="stack">
+          <article class="card exp-card">
+            <div class="exp-header">
+              <div class="exp-title">S-Lab (MMLab), NTU</div>
+              <div class="exp-date">Jan 2026 – Present</div>
+            </div>
+            <p class="exp-role">
+              Research Intern · Advisor:
+              <a
+                href="https://liuziwei7.github.io/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Ziwei Liu</a
+              >
+            </p>
+            <ul class="tight">
+              <li>
+                Co-led EgoTools, a 100+ hour multimodal egocentric dataset and
+                1K-question benchmark for tool-centric reasoning in real-world
+                videos.
+              </li>
+              <li>
+                Designed annotation and QA workflows, coordinated data
+                collection and quality control, and contributed to model
+                evaluation, failure analysis, and manuscript writing.
+              </li>
+              <li>
+                Continuing follow-up research on egocentric tool use and
+                embodied video reasoning.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card exp-card">
+            <div class="exp-header">
+              <div class="exp-title">Computer Vision Lab (CVLAB), KAIST AI</div>
+              <div class="exp-date">Jun 2025 – Present</div>
+            </div>
+            <p class="exp-role">
+              Undergraduate Researcher · Advisor: Prof. Seungryong Kim
+            </p>
+            <ul class="tight">
+              <li>
+                Working on video-prior-based latent action learning, with a
+                focus on data strategy, human/robot video priors, and embodied
+                world modeling.
+              </li>
+              <li>
+                Studied feed-forward 3D reconstruction and novel-view synthesis
+                with Gaussian Splatting, VGGT, and NoPoSplat, and contributed
+                analysis tools and experiments to C3G.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card exp-card">
+            <div class="exp-header">
+              <div class="exp-title">
+                Video and Image Computing Lab (VICLAB), KAIST
+              </div>
+              <div class="exp-date">Dec 2024 – Jun 2025</div>
+            </div>
+            <p class="exp-role">
+              Research Intern · Advisor: Prof. Mun Churl Kim
+            </p>
+            <ul class="tight">
+              <li>
+                Reviewed modern object detection architectures from RCNN/YOLO
+                families to vision transformers.
+              </li>
+              <li>
+                Implemented baselines for few-shot and anomaly detection tasks.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Education ===== -->
       <section id="education">
         <div class="section-head">
           <div>
@@ -954,6 +1222,7 @@
             <h2>Academic background</h2>
           </div>
         </div>
+
         <div class="edu-list">
           <article class="card edu-item">
             <img
@@ -971,7 +1240,7 @@
               <ul class="tight">
                 <li>B.S. in Electrical Engineering</li>
                 <li>Mar 2021 – <i>Expected Aug 2027</i></li>
-                <li>GPA: 4.1/4.3 (Major GPA: 4.19/4.3)</li>
+                <li>GPA: 4.10/4.30 · Major GPA: 4.19/4.30</li>
               </ul>
             </div>
           </article>
@@ -1001,377 +1270,161 @@
         </div>
       </section>
 
-      <!-- ===== EXPERIENCE ===== -->
-      <section id="experience">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Research Experience</div>
-            <h2>Labs & roles</h2>
-          </div>
-        </div>
-        <div class="stack">
-          <div class="card exp-card">
-            <div class="exp-header">
-              <div class="exp-title">S-Lab (MMLab), NTU</div>
-              <div class="exp-date">Jan 2026 – Present</div>
-            </div>
-            <p class="exp-role">
-              Research Intern (Advisor:
-              <a href="https://liuziwei7.github.io/" target="_blank"
-                >Prof. Ziwei Liu</a
-              >, NTU)
-            </p>
-            <ul class="tight">
-              <li>
-                Co-leading EgoTools, a tool-centric egocentric dataset and
-                benchmark for embodied tool-use reasoning, with focus on data
-                collection, annotation workflows, quality control, and benchmark
-                design.
-              </li>
-            </ul>
-          </div>
-
-          <div class="card exp-card">
-            <div class="exp-header">
-              <div class="exp-title">Computer Vision Lab (CVLAB), KAIST AI</div>
-              <div class="exp-date">Jun 2025 – Dec 2025</div>
-            </div>
-            <p class="exp-role">
-              Research Intern (Advisor: Prof. Seungryong Kim, KAIST AI)
-            </p>
-            <ul class="tight">
-              <li>
-                Conducting research on 3D vision: multi-view scene
-                reconstruction pipelines integrating Gaussian Splatting and
-                transformer-based depth estimation (VGGT / NoPoSplat).
-              </li>
-            </ul>
-          </div>
-
-          <div class="card exp-card">
-            <div class="exp-header">
-              <div class="exp-title">
-                Video and Image Computing Lab (VICLAB), KAIST
-              </div>
-              <div class="exp-date">Dec 2024 – Jun 2025</div>
-            </div>
-            <p class="exp-role">
-              Research Intern (Advisor: Prof. Mun Churl Kim, KAIST EE)
-            </p>
-            <ul class="tight">
-              <li>Reviewed object detection models (RCNN–YOLO, ViT).</li>
-              <li>
-                Implemented baseline detectors for few-shot and anomaly
-                detection tasks.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== PUBLICATIONS ===== -->
-      <section id="publications">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Publications</div>
-            <h2>Selected work</h2>
-          </div>
-        </div>
-        <div class="pub-list">
-          <article class="card pub-card">
-            <div class="pub-num">1</div>
-            <div>
-              <div class="pub-title">
-                EgoTools: Tool-Centric Reasoning in Real-World Egocentric
-                Videos.
-              </div>
-              <div class="pub-authors">
-                Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu, Hao Li,
-                Shen Yujiao, Sihan Li, Zhe Yang, Yeongon Kim, Runmao Yao, Yuhao
-                Dong, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan
-                Zhu, Ziwei Liu.
-              </div>
-              <div class="pub-meta">
-                <span class="venue">EMNLP 2026 · Under review</span>
-                <span class="tag">Dataset & Benchmark</span>
-                <span class="tag">Egocentric Vision</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card pub-card">
-            <div class="pub-num">2</div>
-            <div>
-              <div class="pub-title">
-                C3G: Learning Compact 3D Representations from Feed-Forward Novel
-                View Synthesis.
-              </div>
-              <div class="pub-authors">
-                Honggyu An*, Jaewoo Jung*, ..., Hyunah Ko,
-                <strong>Junsu Kim</strong>, ..., Seungryong Kim.
-              </div>
-              <div class="pub-meta">
-                <span class="venue secondary">CVPR 2026</span>
-                <a
-                  class="tag"
-                  href="https://cvlab-kaist.github.io/C3G/"
-                  target="_blank"
-                  >Project Page</a
-                >
-                <a
-                  class="tag"
-                  href="https://arxiv.org/abs/2512.04021"
-                  target="_blank"
-                  >Paper</a
-                >
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="equal-note">*Equal contribution.</p>
-      </section>
-
-      <!-- ===== PROJECTS ===== -->
-      <section id="projects">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Projects</div>
-            <h2>Technical projects</h2>
-          </div>
-        </div>
-        <div class="stack">
-          <div class="card">
-            <strong
-              >FaceVerify-AM: Face Verification with AM-Softmax (EE.40034,
-              KAIST)</strong
-            >
-            <p class="muted">
-              Two-stage metric-learning pipeline for face verification using
-              ResNet-18 and AM-Softmax.
-            </p>
-            <ul class="tight">
-              <li>Scratch training → fine-tuning structured training design</li>
-              <li>
-                Ablation on loss, optimizer, LR scheduler, and augmentation
-                strategies
-              </li>
-              <li>Achieved 8.02% EER (baseline: 22.31%)</li>
-            </ul>
-            <div class="row">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Metric Learning</span>
-              <span class="tag">Face Verification</span>
-              <a
-                class="tag"
-                href="https://github.com/JJUNOS0926/EE40034-DLVU-Final-Project"
-                target="_blank"
-                >GitHub</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== HONORS ===== -->
+      <!-- ===== Honors ===== -->
       <section id="honors">
         <div class="section-head">
           <div>
             <div class="section-kicker">Honors</div>
-            <h2>Awards & scholarships</h2>
+            <h2>Selected awards</h2>
           </div>
         </div>
-        <div class="card accent">
+
+        <div class="card">
           <ul class="kv">
             <li>
               <span class="k"
                 >KAIST <strong>Presidential Fellowship</strong> (15th)</span
               >
-              <span class="v">Feb 2025 – Present</span>
-            </li>
-            <li class="with-sub">
-              <span class="k"
-                >KAIST EE, <strong>Dean’s List Award</strong></span
-              >
-              <span class="v">Spring 2024</span>
-              <span class="sub">Awarded to the top 3% of all EE students</span>
-            </li>
-            <li class="with-sub">
-              <span class="k"
-                >KAIST, <strong>Freshman Dean’s List Award</strong></span
-              >
-              <span class="v">Fall 2021</span>
-              <span class="sub"
-                >Awarded to the top 3% of all freshman students</span
-              >
-            </li>
-            <li>
-              <span class="k"
-                >Woon Hae <strong>Scholarship</strong> (12th)</span
-              >
-              <span class="v">Feb 2025 – Dec 2025</span>
+              <span class="v">2025 – Present</span>
             </li>
             <li>
               <span class="k"
                 >National Science & Engineering Scholarship for Academic
                 Excellence</span
               >
-              <span class="v">Aug 2025 – Present</span>
+              <span class="v">2025 – Present</span>
             </li>
-            <li class="with-sub">
+            <li>
+              <span class="k">KAIST EE <strong>Dean’s List Award</strong></span>
+              <span class="v">Spring 2024</span>
+              <span class="sub">Awarded to the top 3% of EE students</span>
+            </li>
+            <li>
               <span class="k"
-                >KAIST Shared Lives Award (Top-ranked Recipient)</span
+                >KAIST <strong>Freshman Dean’s List Award</strong></span
               >
-              <span class="v">Feb 2026</span>
+              <span class="v">Fall 2021</span>
               <span class="sub"
-                >For exceptional and sustained blood donation service (20
-                donations in one year)</span
+                >Awarded to the top 3% of first-year students</span
               >
+            </li>
+            <li>
+              <span class="k">Woon Hae Scholarship (12th)</span>
+              <span class="v">2025</span>
+            </li>
+            <li>
+              <span class="k"
+                >KAIST Shared Lives Award · Top-ranked Recipient</span
+              >
+              <span class="v">2026</span>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- ===== ACTIVITIES ===== -->
+      <!-- ===== Leadership & Skills ===== -->
       <section id="activities">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Activities</div>
-            <h2>Leadership & service</h2>
+            <div class="section-kicker">Beyond Research</div>
+            <h2>Leadership & technical toolkit</h2>
           </div>
         </div>
-        <div class="card">
-          <ul class="kv activities">
-            <li>
-              <span class="k"
-                >KAIST AI Studying Club (Include) · Google Student
-                Ambassador</span
-              >
-              <span class="v">Sep 2024 – Dec 2025</span>
-            </li>
-            <li>
-              <span class="k">Young Engineers Honor Society (YEHS)</span>
-              <span class="v">Jan 2025 – Present</span>
-            </li>
-            <li>
-              <span class="k">EERun (KAIST EE Running Club), President</span>
-              <span class="v">Sep 2024 – Dec 2025</span>
-            </li>
-            <li>
-              <span class="k"
-                >KAIST Freshman Proctor / Freshman Tutoring Program</span
-              >
-              <span class="v">Mar 2022 – Dec 2024</span>
-            </li>
-          </ul>
-          <p class="muted" style="margin-top: 12px">
-            More activities available in
-            <a href="/cv.pdf" target="_blank">CV</a>.
-          </p>
-        </div>
-      </section>
 
-      <!-- ===== SKILLS ===== -->
-      <section id="skills">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Skills</div>
-            <h2>Technical toolkit</h2>
-          </div>
-        </div>
         <div class="skill-grid">
           <div class="card skill-card">
             <p>
-              <strong>Programming:</strong> Python, C/C++, PyTorch, Git, LaTeX
+              <strong>Leadership:</strong> President of EERun, Google Student
+              Ambassador, member of the Young Engineers Honor Society.
             </p>
           </div>
           <div class="card skill-card">
             <p>
-              <strong>Research Tools:</strong> video preprocessing, dataset
-              curation, annotation pipelines, evaluation scripts
+              <strong>Programming:</strong> Python, C/C++, PyTorch, Git, LaTeX.
             </p>
           </div>
           <div class="card skill-card">
-            <p><strong>Languages:</strong> Korean (Native), English (Fluent)</p>
+            <p>
+              <strong>Research toolkit:</strong> video preprocessing, dataset
+              curation, annotation pipelines, model evaluation, and 3D/vision
+              experimentation.
+            </p>
           </div>
         </div>
       </section>
     </main>
 
-    <div class="foot">
-      © 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">Contact</a>
-    </div>
+    <footer class="foot">
+      © 2026 Junsu Kim ·
+      <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a>
+      · Last updated July 2026
+    </footer>
 
     <script>
-      const applyTheme = (t) => {
+      const applyTheme = (theme) => {
         const root = document.documentElement;
-        if (t === "auto") {
+        if (theme === "auto") {
           root.setAttribute(
             "data-theme",
-            matchMedia("(prefers-color-scheme:dark)").matches
+            window.matchMedia("(prefers-color-scheme: dark)").matches
               ? "dark"
               : "light",
           );
         } else {
-          root.setAttribute("data-theme", t);
+          root.setAttribute("data-theme", theme);
         }
       };
 
-      const saved = localStorage.getItem("theme") || "auto";
-      document.documentElement.setAttribute(
-        "data-theme",
-        saved === "auto"
-          ? matchMedia("(prefers-color-scheme:dark)").matches
-            ? "dark"
-            : "light"
-          : saved,
-      );
+      const savedTheme = localStorage.getItem("theme") || "auto";
+      applyTheme(savedTheme);
 
       window.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("themeBtn");
-        if (btn) {
-          const refreshLabel = () =>
-            (btn.textContent =
+        const themeButton = document.getElementById("themeBtn");
+        if (themeButton) {
+          const refreshThemeLabel = () => {
+            themeButton.textContent =
               document.documentElement.getAttribute("data-theme") === "dark"
                 ? "☀️ Light"
-                : "🌙 Dark");
-          btn.onclick = () => {
-            const cur = document.documentElement.getAttribute("data-theme");
-            const next = cur === "light" ? "dark" : "light";
+                : "🌙 Dark";
+          };
+
+          themeButton.addEventListener("click", () => {
+            const current = document.documentElement.getAttribute("data-theme");
+            const next = current === "light" ? "dark" : "light";
             localStorage.setItem("theme", next);
             applyTheme(next);
-            refreshLabel();
-          };
-          refreshLabel();
+            refreshThemeLabel();
+          });
+
+          refreshThemeLabel();
         }
-      });
 
-      (function () {
-        const navBtn = document.getElementById("navToggle");
+        const navButton = document.getElementById("navToggle");
         const navMenu = document.getElementById("navMenu");
-        if (!navBtn || !navMenu) return;
+        if (!navButton || !navMenu) return;
 
-        navBtn.addEventListener("click", () => {
+        navButton.addEventListener("click", () => {
           const opened = navMenu.classList.toggle("open");
-          navBtn.setAttribute("aria-expanded", opened ? "true" : "false");
+          navButton.setAttribute("aria-expanded", opened ? "true" : "false");
         });
 
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", (event) => {
           if (!navMenu.classList.contains("open")) return;
           const inside =
-            navMenu.contains(e.target) || navBtn.contains(e.target);
+            navMenu.contains(event.target) || navButton.contains(event.target);
           if (!inside) {
             navMenu.classList.remove("open");
-            navBtn.setAttribute("aria-expanded", "false");
+            navButton.setAttribute("aria-expanded", "false");
           }
         });
 
-        navMenu.querySelectorAll("a, .toggle").forEach((el) => {
-          el.addEventListener("click", () => {
+        navMenu.querySelectorAll("a, .toggle").forEach((element) => {
+          element.addEventListener("click", () => {
             navMenu.classList.remove("open");
-            navBtn.setAttribute("aria-expanded", "false");
+            navButton.setAttribute("aria-expanded", "false");
           });
         });
-      })();
+      });
     </script>
   </body>
 </html>

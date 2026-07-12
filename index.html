@@ -258,6 +258,10 @@
         letter-spacing: -0.058em;
       }
 
+      .hero h1 .hero-line {
+        display: block;
+      }
+
       .hero .research-line {
         margin: 0 0 16px;
         max-width: 760px;
@@ -266,6 +270,11 @@
         line-height: 1.55;
         letter-spacing: -0.018em;
         font-weight: 600;
+      }
+
+      .research-accent {
+        color: var(--accent);
+        font-weight: inherit;
       }
 
       .hero .bio {
@@ -579,6 +588,42 @@
         font-weight: 800;
         letter-spacing: -0.025em;
         line-height: 1.36;
+      }
+
+      .pub-title a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .pub-title a:hover,
+      .pub-title a:focus-visible {
+        color: var(--accent);
+      }
+
+      .pub-title a::after {
+        content: " ↗";
+        font-size: 0.72em;
+        font-weight: 700;
+        opacity: 0.45;
+      }
+
+      .update-text a {
+        color: inherit;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: color-mix(
+          in srgb,
+          var(--accent) 45%,
+          transparent
+        );
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+      }
+
+      .update-text a:hover,
+      .update-text a:focus-visible {
+        color: var(--accent);
+        text-decoration-color: var(--accent);
       }
 
       .pub-authors {
@@ -939,11 +984,18 @@
       <div class="hero">
         <div>
           <div class="eyebrow">KAIST EE · NTU S-Lab (MMLab)</div>
-          <h1>Understanding how actions transform the physical world.</h1>
+          <h1>
+            <span class="hero-line">Understanding</span>
+            <span class="hero-line">how actions transform</span>
+            <span class="hero-line">the physical world.</span>
+          </h1>
           <p class="research-line">
-            I build <strong>egocentric and embodied AI systems</strong> that
-            reason about tool use, physical interaction, and action-driven state
-            changes.
+            I build
+            <span class="research-accent"
+              >egocentric and embodied AI systems</span
+            >
+            that reason about tool use, physical interaction, and action-driven
+            state changes.
           </p>
           <p class="bio">
             I am an undergraduate researcher in Electrical Engineering at
@@ -1002,13 +1054,32 @@
           <div class="update-item">
             <div class="update-date">Feb 2026</div>
             <div class="update-text">
-              <strong>C3G</strong> was accepted to CVPR 2026.
+              <a
+                href="https://cvlab-kaist.github.io/C3G/"
+                target="_blank"
+                rel="noopener"
+                >C3G</a
+              >
+              was accepted to CVPR 2026.
             </div>
           </div>
           <div class="update-item">
             <div class="update-date">Jan–May 2026</div>
             <div class="update-text">
-              Conducted research at NTU S-Lab (MMLab) under Prof. Ziwei Liu
+              Conducted research at
+              <a
+                href="https://www.mmlab-ntu.com/"
+                target="_blank"
+                rel="noopener"
+                >NTU S-Lab (MMLab)</a
+              >
+              under
+              <a
+                href="https://liuziwei7.github.io/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Ziwei Liu</a
+              >
               during an exchange semester in Singapore.
             </div>
           </div>
@@ -1073,8 +1144,13 @@
             <div class="pub-num">1</div>
             <div>
               <div class="pub-title">
-                EgoTools: Tool-Centric Reasoning in Real-World Egocentric
-                Videos.
+                <a
+                  href="https://sisters-radical-mentioned-criticism.trycloudflare.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >EgoTools: Tool-Centric Reasoning in Real-World Egocentric
+                  Videos.</a
+                >
               </div>
               <div class="pub-authors">
                 Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu, Hao Li,
@@ -1095,8 +1171,13 @@
             <div class="pub-num">2</div>
             <div>
               <div class="pub-title">
-                C3G: Learning Compact 3D Representations from Feed-Forward Novel
-                View Synthesis.
+                <a
+                  href="https://cvlab-kaist.github.io/C3G/"
+                  target="_blank"
+                  rel="noopener"
+                  >C3G: Learning Compact 3D Representations from Feed-Forward
+                  Novel View Synthesis.</a
+                >
               </div>
               <div class="pub-authors">
                 Honggyu An*, Jaewoo Jung*, ..., Hyunah Ko,

@@ -730,6 +730,58 @@
         margin-top: 10px;
       }
 
+      .pub-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .pub-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 10px 16px;
+        border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+        border-radius: 10px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .pub-action.paper {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #fff;
+      }
+
+      .pub-action:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .pub-action.paper:hover {
+        background: #1d4ed8;
+        border-color: #1d4ed8;
+        color: #fff;
+      }
+
+      .pub-action:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pub-action:hover {
+          transform: none;
+        }
+      }
+
       .venue {
         display: inline-flex;
         align-items: center;
@@ -1152,8 +1204,7 @@
                 >EgoTools</a
               >
               was accepted to
-              <span class="news-venue">EMNLP 2026 (Main Conference)</span>! 🎉
-              <a href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">[Paper]</a>
+              <span class="news-venue">EMNLP 2026 (Main)</span>! 🎉
             </div>
           </div>
           <div class="update-item">
@@ -1271,12 +1322,14 @@
                 </div>
               </details>
               <div class="pub-meta">
-                <span class="venue">EMNLP 2026</span>
-                <a class="tag" href="https://shulin16.github.io/egotools_dev/" target="_blank" rel="noopener">Project Page</a>
-                <a class="tag" href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">Paper</a>
+                <span class="venue">EMNLP 2026 (Main)</span>
                 <span class="tag">Dataset & Benchmark</span>
                 <span class="tag">Egocentric Vision</span>
                 <span class="tag">Tool-Use Reasoning</span>
+              </div>
+              <div class="pub-actions">
+                <a class="pub-action" href="https://shulin16.github.io/egotools_dev/" target="_blank" rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                <a class="pub-action paper" href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">Read Paper <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </article>
@@ -1307,21 +1360,23 @@
               </details>
               <div class="pub-meta">
                 <span class="venue secondary">CVPR 2026</span>
+                <span class="tag">3D Representation</span>
+              </div>
+              <div class="pub-actions">
                 <a
-                  class="tag"
+                  class="pub-action"
                   href="https://cvlab-kaist.github.io/C3G/"
                   target="_blank"
                   rel="noopener"
-                  >Project Page</a
+                  >Project Page <span aria-hidden="true">↗</span></a
                 >
                 <a
-                  class="tag"
+                  class="pub-action paper"
                   href="https://arxiv.org/abs/2512.04021"
                   target="_blank"
                   rel="noopener"
-                  >Paper</a
+                  >Read Paper <span aria-hidden="true">↗</span></a
                 >
-                <span class="tag">3D Representation</span>
               </div>
             </div>
           </article>

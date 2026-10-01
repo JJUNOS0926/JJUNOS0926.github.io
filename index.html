@@ -691,6 +691,38 @@
         line-height: 1.5;
       }
 
+      .pub-authors summary {
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .pub-authors summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .authors-toggle {
+        display: inline-block;
+        margin-left: 8px;
+        color: var(--accent);
+        font-size: 13px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .authors-less,
+      .pub-authors[open] .authors-short,
+      .pub-authors[open] .authors-more {
+        display: none;
+      }
+
+      .pub-authors[open] .authors-less {
+        display: inline;
+      }
+
+      .authors-full {
+        margin-top: 4px;
+      }
+
       .pub-meta {
         display: flex;
         flex-wrap: wrap;
@@ -1121,6 +1153,7 @@
               >
               was accepted to
               <span class="news-venue">EMNLP 2026 (Main Conference)</span>! 🎉
+              <a href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">[Paper]</a>
             </div>
           </div>
           <div class="update-item">
@@ -1217,22 +1250,30 @@
             <div>
               <div class="pub-title">
                 <a
-                  href="https://shulin16.github.io/egotools_dev/"
+                  href="https://arxiv.org/abs/2609.39378"
                   target="_blank"
                   rel="noopener"
-                  >EgoTools: Tool-Centric Reasoning in Real-World Egocentric
+                  >EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric
                   Videos.</a
                 >
               </div>
-              <div class="pub-authors">
-                Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu*, Hao Li*,
-                Yujiao Shen, Sihan Li, Zhe Yang, Yeongon Kim, Feiyu Li, Jialin
-                Wu, Yichi Zhang, Wenhui Wang, Runmao Yao, Yuhao Dong, Zhaoxi
-                Chen, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan
-                Zhu, Ziwei Liu.
-              </div>
+              <details class="pub-authors">
+                <summary>
+                  <span class="authors-short">Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu*, Hao Li*, ..., Ziwei Liu.</span>
+                  <span class="authors-toggle"><span class="authors-more">View all</span><span class="authors-less">View less</span></span>
+                </summary>
+                <div class="authors-full">
+                  Shulin Tian*, <strong>Junsu Kim*</strong>, Shuai Liu*, Hao Li*,
+                  Yujiao Shen, Sihan Li, Zhe Yang, Yeongon Kim, Feiyu Li, Jialin
+                  Wu, Yichi Zhang, Wenhui Wang, Runmao Yao, Yuhao Dong, Zhaoxi
+                  Chen, Fangzhou Hong, Antonino Furnari, Jingkang Yang, Hongyuan
+                  Zhu, Ziwei Liu.
+                </div>
+              </details>
               <div class="pub-meta">
                 <span class="venue">EMNLP 2026</span>
+                <a class="tag" href="https://shulin16.github.io/egotools_dev/" target="_blank" rel="noopener">Project Page</a>
+                <a class="tag" href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">Paper</a>
                 <span class="tag">Dataset & Benchmark</span>
                 <span class="tag">Egocentric Vision</span>
                 <span class="tag">Tool-Use Reasoning</span>
@@ -1252,10 +1293,18 @@
                   Gaussians.</a
                 >
               </div>
-              <div class="pub-authors">
-                Honggyu An*, Jaewoo Jung*, ..., Hyuna Ko,
-                <strong>Junsu Kim</strong>, ..., Seungryong Kim.
-              </div>
+              <details class="pub-authors">
+                <summary>
+                  <span class="authors-short">Honggyu An*, Jaewoo Jung*, ..., <strong>Junsu Kim</strong>, ..., Seungryong Kim.</span>
+                  <span class="authors-toggle"><span class="authors-more">View all</span><span class="authors-less">View less</span></span>
+                </summary>
+                <div class="authors-full">
+                  Honggyu An*, Jaewoo Jung*, Mungyeom Kim, Chaehyun Kim,
+                  Minkyeong Jeon, Jisang Han, Kazumi Fukuda, Takuya Narihira,
+                  Hyuna Ko, <strong>Junsu Kim</strong>, Sunghwan Hong,
+                  Yuki Mitsufuji, Seungryong Kim.
+                </div>
+              </details>
               <div class="pub-meta">
                 <span class="venue secondary">CVPR 2026</span>
                 <a
@@ -1276,6 +1325,29 @@
               </div>
             </div>
           </article>
+          <article class="card pub-card">
+            <div class="pub-num">3</div>
+            <div>
+              <div class="pub-title">
+                DreamX: Video Diffusion Model Is A Universal Latent Action Learner.
+              </div>
+              <details class="pub-authors">
+                <summary>
+                  <span class="authors-short">Jisoo Kim*, Chaehyun Kim*, <strong>Junsu Kim</strong>, ..., Seungryong Kim.</span>
+                  <span class="authors-toggle"><span class="authors-more">View all</span><span class="authors-less">View less</span></span>
+                </summary>
+                <div class="authors-full">
+                  Jisoo Kim*, Chaehyun Kim*, <strong>Junsu Kim</strong>, Jiho Park,
+                  Seongchan Kim, Eunbeen Hong, Soowon Son, Fu-En Yang, Seungryong Kim.
+                </div>
+              </details>
+              <div class="pub-meta">
+                <span class="venue secondary">Under review at ICLR 2027</span>
+                <span class="tag">Latent Action Learning</span>
+                <span class="tag">Video Diffusion</span>
+              </div>
+            </div>
+          </article>
         </div>
 
         <p class="equal-note">* Equal contribution.</p>
@@ -1293,6 +1365,21 @@
         <div class="stack">
           <article class="card exp-card">
             <div class="exp-header">
+              <div class="exp-title">MAUM AI, WoRV Division, Future Intelligence Lab</div>
+              <div class="exp-date">Aug 2026 – Present</div>
+            </div>
+            <p class="exp-role">Research Intern</p>
+            <ul class="tight">
+              <li>
+                Evaluating real-world vision-language-action and world-action
+                models and developing human-aware embodied evaluation tasks,
+                with a focus on physical reasoning and action-conditioned behaviors.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card exp-card">
+            <div class="exp-header">
               <div class="exp-title">S-Lab (MMLab), NTU</div>
               <div class="exp-date">Jan 2026 – Present</div>
             </div>
@@ -1307,18 +1394,21 @@
             </p>
             <ul class="tight">
               <li>
-                Co-led EgoTools, a 100+ hour multimodal egocentric dataset and
+                Co-led <a href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">EgoTools</a>, a 100+ hour multimodal egocentric dataset and
                 1K-question benchmark for tool-centric reasoning in real-world
                 videos.
               </li>
               <li>
-                Designed annotation and QA workflows, coordinated data
-                collection and quality control, and contributed to model
-                evaluation, failure analysis, and manuscript writing.
+                Designed annotation and QA workflows for physical-state,
+                procedural, affordance, and tool-use reasoning; coordinated
+                data collection and quality control; and co-led construction
+                of a 1K-QA benchmark.
               </li>
               <li>
-                Continuing follow-up research on egocentric tool use and
-                embodied video reasoning.
+                Fine-tuned Qwen3-VL-8B on 220K multimodal training examples,
+                improving EgoTools-Bench accuracy from 50.0% to 60.9%; conducted
+                cross-benchmark generalization, failure-case, and
+                catastrophic-forgetting analyses.
               </li>
             </ul>
           </article>
@@ -1329,18 +1419,21 @@
               <div class="exp-date">Jun 2025 – Present</div>
             </div>
             <p class="exp-role">
-              Undergraduate Researcher · Advisor: Prof. Seungryong Kim
+              Research Intern · Advisor: Prof. Seungryong Kim
             </p>
             <ul class="tight">
               <li>
-                Working on video-prior-based latent action learning, with a
-                focus on data strategy, human/robot video priors, and embodied
-                world modeling.
+                Jun 2026 – Oct 2026: Designed and conducted experiments for
+                DreamX, evaluating latent-action representation quality,
+                cross-embodiment video/action transfer, and representation
+                behavior through baseline studies and targeted experiments
+                motivated by qualitative observations.
               </li>
               <li>
-                Studied feed-forward 3D reconstruction and novel-view synthesis
-                with Gaussian Splatting, VGGT, and NoPoSplat, and contributed
-                analysis tools and experiments to C3G.
+                Jun 2025 – Nov 2025: Contributed to C3G, investigating
+                feed-forward 3D reconstruction and novel-view synthesis with
+                Gaussian Splatting, VGGT, and NoPoSplat, with a focus on geometry
+                quality and representation behavior.
               </li>
             </ul>
           </article>
@@ -1511,7 +1604,7 @@
     <footer class="foot">
       © 2026 Junsu Kim ·
       <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a>
-      · Last updated July 2026
+      · Last updated October 2026
     </footer>
 
     <script>

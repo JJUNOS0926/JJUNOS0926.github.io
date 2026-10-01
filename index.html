@@ -733,53 +733,41 @@
       .pub-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 16px;
+        gap: 8px;
+        margin-top: 14px;
       }
 
       .pub-action {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        min-height: 44px;
-        padding: 10px 16px;
-        border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
-        border-radius: 10px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 14px;
-        font-weight: 700;
+        gap: 10px;
+        min-height: 34px;
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        background: transparent;
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.5;
       }
 
-      .pub-action.paper {
-        background: #2563eb;
-        border-color: #2563eb;
-        color: #fff;
+      .pub-action span {
+        color: var(--muted);
+        font-size: 12px;
+        opacity: 0.7;
       }
 
       .pub-action:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-soft);
-        border-color: var(--accent);
+        background: var(--accent-soft);
+        border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
         color: var(--accent);
       }
 
-      .pub-action.paper:hover {
-        background: #1d4ed8;
-        border-color: #1d4ed8;
-        color: #fff;
-      }
-
       .pub-action:focus-visible {
-        outline: 3px solid var(--accent);
+        outline: 2px solid var(--accent);
         outline-offset: 3px;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .pub-action:hover {
-          transform: none;
-        }
       }
 
       .venue {

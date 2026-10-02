@@ -622,31 +622,45 @@
       /* ===== Publications ===== */
       .pub-list {
         display: grid;
-        gap: 14px;
+        gap: 0;
       }
 
       .pub-card {
         display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: 14px;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 28px;
         align-items: start;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--border);
       }
 
-      .pub-num {
-        width: 36px;
-        height: 36px;
-        display: grid;
-        place-items: center;
-        border-radius: 12px;
-        color: #fff;
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      .pub-card:first-child {
+        padding-top: 0;
+      }
+
+      .pub-card:last-child {
+        border-bottom: 0;
+      }
+
+      .pub-preview {
+        display: block;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .pub-preview img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
       }
 
       .pub-title {
-        font-weight: 800;
-        letter-spacing: -0.025em;
-        line-height: 1.36;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.45;
       }
 
       .pub-title a {
@@ -657,13 +671,6 @@
       .pub-title a:hover,
       .pub-title a:focus-visible {
         color: var(--accent);
-      }
-
-      .pub-title a::after {
-        content: " ↗";
-        font-size: 0.72em;
-        font-weight: 700;
-        opacity: 0.45;
       }
 
       .update-text a {
@@ -688,7 +695,14 @@
       .pub-authors {
         margin-top: 6px;
         color: var(--muted);
+        font-size: 14px;
         line-height: 1.5;
+      }
+
+      .pub-authors strong {
+        color: var(--text);
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
 
       .pub-authors summary {
@@ -724,45 +738,33 @@
       }
 
       .pub-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
         margin-top: 10px;
       }
 
       .pub-actions {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         gap: 8px;
-        margin-top: 14px;
+        margin-top: 6px;
       }
 
       .pub-action {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        min-height: 34px;
-        padding: 6px 12px;
-        border: 1px solid var(--border);
-        border-radius: 7px;
-        background: transparent;
-        color: var(--text);
-        font-size: 12px;
-        font-weight: 500;
+        padding: 3px 0;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 400;
         line-height: 1.5;
       }
 
-      .pub-action span {
+      .pub-link-divider {
         color: var(--muted);
-        font-size: 12px;
-        opacity: 0.7;
+        font-size: 13px;
       }
 
       .pub-action:hover {
-        background: var(--accent-soft);
-        border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
-        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
 
       .pub-action:focus-visible {
@@ -771,22 +773,21 @@
       }
 
       .venue {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 5px 10px;
-        border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
-        border-radius: 999px;
-        color: var(--accent);
-        background: var(--accent-soft);
-        font-size: 12px;
-        font-weight: 800;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
       }
 
       .venue.secondary {
-        color: var(--accent-2);
-        background: var(--teal-soft);
-        border-color: color-mix(in srgb, var(--accent-2) 24%, var(--border));
+        color: var(--text);
+      }
+
+      .pub-area {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-style: italic;
+        line-height: 1.5;
       }
 
       .equal-note {
@@ -1058,6 +1059,14 @@
           grid-template-columns: 1fr;
         }
 
+        .pub-card {
+          gap: 16px;
+        }
+
+        .pub-preview {
+          width: min(100%, 320px);
+        }
+
         .edu-logo {
           width: 78px;
           height: 52px;
@@ -1284,8 +1293,10 @@
         </div>
 
         <div class="pub-list">
-          <article class="card pub-card">
-            <div class="pub-num">1</div>
+          <article class="pub-card">
+            <a class="pub-preview" href="https://ropedia.github.io/egotools/" target="_blank" rel="noopener">
+              <img src="images/publications/egotools.jpg" alt="EgoTools dataset overview across real-world tool-use domains" width="1000" height="694" loading="lazy" />
+            </a>
             <div>
               <div class="pub-title">
                 <a
@@ -1311,19 +1322,20 @@
               </details>
               <div class="pub-meta">
                 <span class="venue">EMNLP 2026 (Main)</span>
-                <span class="tag">Dataset & Benchmark</span>
-                <span class="tag">Egocentric Vision</span>
-                <span class="tag">Tool-Use Reasoning</span>
               </div>
               <div class="pub-actions">
-                <a class="pub-action" href="https://ropedia.github.io/egotools/" target="_blank" rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
-                <a class="pub-action paper" href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">Read Paper <span aria-hidden="true">↗</span></a>
+                <a class="pub-action" href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">Paper</a>
+                <span class="pub-link-divider" aria-hidden="true">/</span>
+                <a class="pub-action" href="https://ropedia.github.io/egotools/" target="_blank" rel="noopener">Project Page</a>
               </div>
+              <p class="pub-area">Area: Tool-centric reasoning, egocentric video understanding, multimodal agents</p>
             </div>
           </article>
 
-          <article class="card pub-card">
-            <div class="pub-num">2</div>
+          <article class="pub-card">
+            <a class="pub-preview" href="https://cvlab-kaist.github.io/C3G/" target="_blank" rel="noopener">
+              <img src="images/publications/c3g.png" alt="C3G overview of compact Gaussian scene reconstruction and understanding" loading="lazy" />
+            </a>
             <div>
               <div class="pub-title">
                 <a
@@ -1348,28 +1360,25 @@
               </details>
               <div class="pub-meta">
                 <span class="venue secondary">CVPR 2026</span>
-                <span class="tag">3D Representation</span>
               </div>
               <div class="pub-actions">
+                <a class="pub-action" href="https://arxiv.org/abs/2512.04021" target="_blank" rel="noopener">Paper</a>
+                <span class="pub-link-divider" aria-hidden="true">/</span>
                 <a
                   class="pub-action"
                   href="https://cvlab-kaist.github.io/C3G/"
                   target="_blank"
                   rel="noopener"
-                  >Project Page <span aria-hidden="true">↗</span></a
-                >
-                <a
-                  class="pub-action paper"
-                  href="https://arxiv.org/abs/2512.04021"
-                  target="_blank"
-                  rel="noopener"
-                  >Read Paper <span aria-hidden="true">↗</span></a
+                  >Project Page</a
                 >
               </div>
+              <p class="pub-area">Area: Compact 3D representations, Gaussian splatting, novel-view synthesis</p>
             </div>
           </article>
-          <article class="card pub-card">
-            <div class="pub-num">3</div>
+          <article class="pub-card">
+            <div class="pub-preview">
+              <img src="images/publications/dreamx.png" alt="DreamX overview of video diffusion for latent action learning" loading="lazy" />
+            </div>
             <div>
               <div class="pub-title">
                 DreamX: Video Diffusion Model Is A Universal Latent Action Learner.
@@ -1386,9 +1395,8 @@
               </details>
               <div class="pub-meta">
                 <span class="venue secondary">Under review at ICLR 2027</span>
-                <span class="tag">Latent Action Learning</span>
-                <span class="tag">Video Diffusion</span>
               </div>
+              <p class="pub-area">Area: Latent action learning, video diffusion, cross-embodiment transfer</p>
             </div>
           </article>
         </div>

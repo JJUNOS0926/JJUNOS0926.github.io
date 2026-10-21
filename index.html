@@ -247,6 +247,67 @@
         padding: 44px 18px 14px;
       }
 
+      .application-banner {
+        max-width: 1040px;
+        margin: 0 auto 22px;
+        padding: 19px 24px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+        border-radius: 16px;
+        background: linear-gradient(
+          110deg,
+          var(--accent-soft),
+          color-mix(in srgb, var(--surface-solid) 70%, transparent)
+        );
+      }
+
+      .application-dot {
+        flex: 0 0 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 5px var(--accent-soft);
+      }
+
+      .application-copy {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .application-title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        line-height: 1.5;
+      }
+
+      .application-title strong {
+        font-weight: 650;
+      }
+
+      .application-focus {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .application-cycle {
+        flex-shrink: 0;
+        padding: 6px 11px;
+        border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--border));
+        border-radius: 7px;
+        background: var(--surface-solid);
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+      }
+
       .hero {
         position: relative;
         overflow: hidden;
@@ -1044,6 +1105,31 @@
           padding-top: 28px;
         }
 
+        .application-banner {
+          position: relative;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 18px;
+          margin-bottom: 18px;
+        }
+
+        .application-dot {
+          margin-top: 8px;
+        }
+
+        .application-title {
+          padding-top: 27px;
+          font-size: 15px;
+        }
+
+        .application-cycle {
+          position: absolute;
+          top: 17px;
+          left: 39px;
+          padding: 2px 7px;
+          font-size: 11px;
+        }
+
         .hero {
           padding: 23px;
           border-radius: 24px;
@@ -1138,6 +1224,14 @@
 
     <!-- ===== Hero ===== -->
     <header id="top" class="hero-wrap">
+      <aside class="application-banner" aria-label="Ph.D. applications for Fall 2027">
+        <span class="application-dot" aria-hidden="true"></span>
+        <div class="application-copy">
+          <p class="application-title">I’m applying to <strong>Ph.D. programs.</strong></p>
+          <p class="application-focus">Embodied AI, world models, and 3D/4D vision.</p>
+        </div>
+        <span class="application-cycle">Fall 2027</span>
+      </aside>
       <div class="hero">
         <div>
           <div class="eyebrow">KAIST EE · NTU S-Lab (MMLab)</div>

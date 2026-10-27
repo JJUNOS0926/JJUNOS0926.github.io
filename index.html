@@ -302,15 +302,13 @@
       .update-date { padding-top: 2px; font-size: 11px; color: var(--muted); }
       .update-text { font-size: 13px; line-height: 1.7; }
       .news-venue { font-weight: 600; }
-      .news-photo { display: inline; }
-      .news-photo summary { display: inline; margin-left: 5px; font-size: 10.5px; color: var(--accent); cursor: pointer; list-style: none; }
-      .news-photo summary::-webkit-details-marker { display: none; }
-      .news-photo summary:hover { text-decoration: underline; }
-      .news-photo .photo-less,
-      .news-photo[open] .photo-more { display: none; }
-      .news-photo[open] .photo-less { display: inline; }
-      .news-photo-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 10px; max-width: 450px; }
-      .news-photo-row img { flex: 1 1 0; min-width: 0; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--border); border-radius: 8px; }
+      .news-photo-row { display: flex; gap: 8px; margin-top: 8px; }
+      .news-photo-row a { display: block; border-radius: 6px; cursor: zoom-in; }
+      .news-photo-row img { width: auto; height: 120px; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--border); border-radius: 6px; transition: opacity .16s ease; }
+      .news-photo-row a:hover img { opacity: .85; }
+      .lightbox { padding: 0; border: 0; background: none; max-width: 92vw; max-height: 92dvh; overflow: visible; cursor: zoom-out; }
+      .lightbox::backdrop { background: rgba(8, 12, 18, .82); }
+      .lightbox img { width: auto; height: auto; max-width: min(92vw, 900px); max-height: 92dvh; border-radius: 10px; }
 
       .pub-card {
         display: grid;
@@ -541,13 +539,10 @@
                 >EgoTools</a
               >
               at <span class="news-venue">EMNLP 2026</span> in Budapest, Hungary.
-              <details class="news-photo">
-                <summary><span class="photo-more">Photos</span><span class="photo-less">Hide photos</span></summary>
-                <div class="news-photo-row">
-                  <img src="images/news/emnlp2026_budapest.jpg" alt="Junsu Kim at the EgoTools poster, EMNLP 2026 in Budapest" width="575" height="815" loading="lazy" />
-                  <img src="images/news/emnlp2026_poster_talk.jpg" alt="Junsu Kim presenting the EgoTools poster at EMNLP 2026" width="910" height="1213" loading="lazy" />
-                </div>
-              </details>
+              <div class="news-photo-row">
+                <a href="images/news/emnlp2026_budapest.jpg" target="_blank" rel="noopener"><img src="images/news/emnlp2026_budapest.jpg" alt="Junsu Kim at the EgoTools poster, EMNLP 2026 in Budapest" width="575" height="815" /></a>
+                <a href="images/news/emnlp2026_poster_talk.jpg" target="_blank" rel="noopener"><img src="images/news/emnlp2026_poster_talk.jpg" alt="Junsu Kim presenting the EgoTools poster at EMNLP 2026" width="910" height="1213" /></a>
+              </div>
             </div>
           </div>
           <div class="update-item">
@@ -951,6 +946,7 @@
       <footer class="foot">© 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a> · Updated October 2026</footer>
       </main>
     </div>
+    <dialog id="lightbox" class="lightbox" aria-label="Photo"><img alt="" /></dialog>
     <script>
       const applyTheme = (theme) => {
         document.documentElement.setAttribute("data-theme", theme === "auto"
@@ -973,6 +969,20 @@
         refreshThemeLabel();
       });
       refreshThemeLabel();
+
+      // News photos open in an overlay; without <dialog> support the links just open the image.
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = lightbox.querySelector("img");
+      document.querySelectorAll(".news-photo-row a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          if (typeof lightbox.showModal !== "function") return;
+          event.preventDefault();
+          lightboxImage.src = link.href;
+          lightboxImage.alt = link.querySelector("img").alt;
+          lightbox.showModal();
+        });
+      });
+      lightbox.addEventListener("click", () => lightbox.close());
 
       const sectionLinks = [...document.querySelectorAll(".toc a")];
       if ("IntersectionObserver" in window) {

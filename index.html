@@ -227,6 +227,17 @@
       .research-list li { margin-bottom: 8px; }
       .research-list li:last-child { margin-bottom: 0; }
 
+      .headline {
+        margin: 2px 4px 26px;
+        font-family: var(--serif);
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: -.035em;
+        line-height: 1.15;
+        text-wrap: balance;
+      }
+      .headline em { font-style: italic; font-weight: 400; color: var(--accent); white-space: nowrap; }
+
       /* An announcement, not a second hero. */
       .application-banner {
         display: flex;
@@ -394,6 +405,7 @@
         .toc a { padding: 5px 8px; font-size: 11px; }
         main > section { padding: 24px 20px; margin-bottom: 16px; border-radius: 14px; }
         h2 { font-size: 24px; }
+        .headline { font-size: 29px; margin: 4px 2px 18px; }
         .prose { font-size: 16px; }
         .application-banner { flex-wrap: wrap; gap: 12px; padding: 20px; margin-bottom: 16px; }
         .application-copy { flex-basis: 100%; }
@@ -461,6 +473,7 @@
         <button id="themeBtn" class="theme-toggle" type="button" aria-label="Switch color theme">Dark mode</button>
       </aside>
       <main id="content">
+      <p class="headline">Understanding how <em>actions transform</em> the physical world.</p>
       <aside class="application-banner" aria-label="Ph.D. applications for Fall 2027">
         <div class="application-copy">
           <p class="application-title">I’m applying to <strong>Ph.D. programs.</strong></p>

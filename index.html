@@ -179,7 +179,7 @@
       .toc { margin-top: 16px; }
       .toc a {
         display: block;
-        padding: 6px 10px;
+        padding: 4px 10px;
         border-radius: 6px;
         color: var(--muted);
         font-size: 12px;
@@ -306,6 +306,9 @@
       .news-photo-row a { display: block; border-radius: 6px; cursor: zoom-in; }
       .news-photo-row img { width: auto; height: 120px; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--border); border-radius: 6px; transition: opacity .16s ease; }
       .news-photo-row a:hover img { opacity: .85; }
+      .hobby-photos { margin-top: 12px; }
+      .hobby-photos img { height: 180px; }
+      .photo-credit { margin: 6px 0 0; color: var(--muted); font-size: 10.5px; }
       .lightbox { padding: 0; border: 0; background: none; max-width: 92vw; max-height: 92dvh; overflow: visible; cursor: zoom-out; }
       .lightbox::backdrop { background: rgba(8, 12, 18, .82); }
       .lightbox img { width: auto; height: auto; max-width: min(92vw, 900px); max-height: 92dvh; border-radius: 10px; }
@@ -486,6 +489,7 @@
           <a href="#education">Education</a>
           <a href="#honors">Honors</a>
           <a href="#activities">Leadership</a>
+          <a href="#outside">Outside the lab</a>
         </nav>
         <button id="themeBtn" class="theme-toggle" type="button" aria-label="Switch color theme">Dark mode</button>
       </aside>
@@ -973,6 +977,16 @@
             egocentric video data collection, video diffusion models, 3D Gaussian splatting, VLM fine-tuning.</p>
           </div>
         </div>
+      </section>
+      <section id="outside">
+        <h2>Outside the lab</h2>
+        <p class="update-text">I run and lift. I led EERun, the KAIST EE running club, from 2024 to 2025,
+        and finished the Seoul Tour Marathon half in September 2026.</p>
+        <div class="news-photo-row hobby-photos">
+          <a href="images/hobby/run_finish.jpg" target="_blank" rel="noopener"><img src="images/hobby/run_finish.jpg" alt="Junsu Kim with his finisher medal at the Seoul Tour Marathon, September 2026" width="750" height="1000" loading="lazy" /></a>
+          <a href="images/hobby/run_race.jpg" target="_blank" rel="noopener"><img src="images/hobby/run_race.jpg" alt="Junsu Kim running the Seoul Tour Marathon half" width="750" height="1000" loading="lazy" /></a>
+        </div>
+        <p class="photo-credit">Race photo: Bluewins Photography</p>
       </section>
       <footer class="foot">© 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a> · Updated November 2026</footer>
       </main>

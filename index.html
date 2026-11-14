@@ -14,14 +14,14 @@
     <title>Junsu Kim — Research Homepage</title>
     <meta
       name="description"
-      content="Junsu Kim is a KAIST EE undergraduate researcher studying egocentric and embodied AI, latent-action and world models, and 3D/4D scene understanding."
+      content="Junsu Kim is a KAIST EE undergraduate researcher studying action representations and world models that predict the physical consequences of robot actions, connecting 3D vision, egocentric video, and robot learning."
     />
     <meta name="theme-color" content="#f6f4ef" />
     <!-- Link previews (KakaoTalk, Slack, X, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://junsu-kim.com/" />
     <meta property="og:title" content="Junsu Kim — Research Homepage" />
-    <meta property="og:description" content="KAIST EE undergraduate researcher in egocentric and embodied AI, world models, and 3D/4D vision." />
+    <meta property="og:description" content="KAIST EE undergraduate researcher working toward robots that predict the physical consequences of their actions." />
     <meta property="og:image" content="https://junsu-kim.com/images/profile.jpg?v=3" />
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="800" />
@@ -146,7 +146,7 @@
       .profile-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 7px;
+        gap: 6px;
         padding: 16px 0;
         margin-top: 16px;
         border-top: 1px solid var(--border);
@@ -155,7 +155,7 @@
       .profile-links a {
         display: inline-flex;
         align-items: center;
-        padding: 3px 10px;
+        padding: 3px 8px;
         border: 1px solid var(--border);
         border-radius: 6px;
         color: var(--text);
@@ -366,6 +366,7 @@
       .pub-action { font-size: 12px; }
       .pub-link-divider { color: var(--border); font-size: 11px; }
       .pub-summary { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+      .venue-note { margin-left: 6px; color: var(--muted); font-size: 11px; font-style: italic; }
       .equal-note { margin: 18px 0 0; color: var(--muted); font-size: 10.5px; }
 
       .exp-card { padding: 19px 0; border-top: 1px solid var(--border); }
@@ -396,6 +397,7 @@
       .kv .sub { grid-column: 1 / -1; font-size: 11px; color: var(--muted); }
       .skill-grid { display: grid; gap: 10px; }
       .skill-card { font-size: 12px; color: var(--muted); }
+      .skills-block { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
       .skill-card strong { color: var(--text); font-weight: 600; }
       .foot { padding: 17px 25px; color: var(--muted); font-size: 10.5px; margin-bottom: 0; }
 
@@ -466,15 +468,15 @@
             <h1>Junsu Kim</h1>
             <p class="profile-role">Undergraduate, Electrical Engineering<br />
               <a href="https://www.kaist.ac.kr/en/" target="_blank" rel="noopener">KAIST</a><br />
-              Research Intern · NTU S-Lab & MAUM AI
+              Research Intern · NTU S-Lab & Maum AI
             </p>
           </div>
         </div>
         <div class="profile-links" aria-label="Contact and profiles">
           <span class="contact-email"><a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a></span>
-          <a href="/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
-          <a href="mailto:sam9732@kaist.ac.kr">Email</a>
-          <a href="https://github.com/JJUNOS0926" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="https://github.com/JJUNOS0926" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/junsu-kim-933674368/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <nav class="toc" aria-label="Sections">
           <a href="#about" aria-current="location">About</a>
@@ -484,16 +486,16 @@
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
           <a href="#honors">Honors</a>
-          <a href="#activities">Beyond research</a>
+          <a href="#activities">Leadership</a>
         </nav>
         <button id="themeBtn" class="theme-toggle" type="button" aria-label="Switch color theme">Dark mode</button>
       </aside>
       <main id="content">
-      <p class="headline">Understanding how <em>actions transform</em> the physical world.</p>
+      <p class="headline">Toward robots that predict the <em>physical consequences</em> of their actions.</p>
       <aside class="application-banner" aria-label="Ph.D. applications for Fall 2027">
         <div class="application-copy">
           <p class="application-title">I’m applying to <strong>Ph.D. programs.</strong></p>
-          <p class="application-focus">Embodied AI, world models, and 3D/4D vision.</p>
+          <p class="application-focus">Robot learning, world models, and 3D vision.</p>
         </div>
         <span class="application-cycle">Fall 2027</span>
       </aside>
@@ -503,20 +505,25 @@
           <p>I am an undergraduate in Electrical Engineering at <strong>KAIST</strong>.
           I conduct research with <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">Prof. Seungryong Kim</a> at KAIST CVLab
           and <a href="https://liuziwei7.github.io/" target="_blank" rel="noopener">Prof. Ziwei Liu</a> at NTU S-Lab (MMLab).
-          I am also a research intern at <strong>MAUM AI</strong>.</p>
-          <p>My work connects human video and robot experience to understand physical interactions
-          and how actions change the world.</p>
+          I am also a research intern at <strong>Maum AI</strong> (WoRV), working on long-horizon
+          human–robot collaboration in simulation.</p>
+          <p>My work connects human video and robot experience: reasoning about tool use from
+          egocentric video (EgoTools), learning latent actions shared by humans and robots (DreamX),
+          and building compact 3D representations (C3G). I am now testing whether spatial cues from
+          human tool use help generated robot videos get contact right.</p>
         </div>
       </section>
       <section id="research">
         <h2>Research</h2>
         <div class="prose">
-          <p class="research-question">How can AI understand the physical consequences of actions in real-world environments?</p>
-          <p>I study egocentric and embodied AI, with three connected interests:</p>
+          <p class="research-question">What must an action representation capture about contact and object state for a robot to achieve its intended physical effect?</p>
+          <p>I study what action representations must capture about contact and object state, and how
+          world models can use them to predict whether actions achieve their intended effects. My work
+          connects 3D vision, egocentric video understanding, and robot learning, using both human and robot data.</p>
           <ul class="research-list">
-            <li><strong>Tool-use reasoning:</strong> understanding tool choice, interactions, and evolving object states from first-person video.</li>
-            <li><strong>Latent actions & world models:</strong> learning action representations from human and robot experience to model what happens next.</li>
-            <li><strong>3D/4D scene understanding:</strong> building geometry-aware representations for reconstruction and embodied interaction.</li>
+            <li><strong>Contact- and state-aware action representations:</strong> learning actions from human and robot video that keep the spatial cues (hand pose, depth, contact) that motion alone misses.</li>
+            <li><strong>World models that predict physical effects:</strong> predicting whether an action will change an object as intended, judged by the physical outcome rather than benchmark scores alone.</li>
+            <li><strong>Egocentric video & 3D grounding:</strong> tool-use reasoning from first-person video and compact, geometry-aware scene representations.</li>
           </ul>
         </div>
       </section>
@@ -528,6 +535,20 @@
         </div>
 
         <div class="card updates-card">
+          <div class="update-item">
+            <div class="update-date">Nov 2026</div>
+            <div class="update-text">
+              <a href="https://arxiv.org/abs/2611.05377" target="_blank" rel="noopener">DreamX</a>
+              is now on arXiv.
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">Oct 2026</div>
+            <div class="update-text">
+              <a href="https://cvlab-kaist.github.io/DreamX/" target="_blank" rel="noopener">DreamX</a>
+              was accepted to the <span class="news-venue">CoRL 2026 Workshop on Scaling H2R</span>.
+            </div>
+          </div>
           <div class="update-item">
             <div class="update-date">Oct 2026</div>
             <div class="update-text">
@@ -556,6 +577,13 @@
               >
               was accepted to
               <span class="news-venue">EMNLP 2026 (Main)</span>! 🎉
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">Aug 2026</div>
+            <div class="update-text">
+              Joined <span class="news-venue">Maum AI</span> (WoRV) as a research intern,
+              working on long-horizon human–robot collaboration.
             </div>
           </div>
           <div class="update-item">
@@ -705,7 +733,7 @@
                 </div>
               </details>
               <div class="pub-meta">
-                <span class="venue secondary">Preprint 2026</span>
+                <span class="venue secondary">CoRL 2026 Workshop (Scaling H2R)</span><span class="venue-note">Under review at ICLR 2027</span>
               </div>
               <div class="pub-actions">
                 <a class="pub-action" href="https://arxiv.org/abs/2611.05377" target="_blank" rel="noopener">Paper</a>
@@ -729,7 +757,7 @@
         <div class="stack">
           <article class="card exp-card">
             <div class="exp-header">
-              <div class="exp-title">MAUM AI, WoRV Division, Future Intelligence Lab</div>
+              <div class="exp-title">Future Intelligence Lab, WoRV Division, Maum AI</div>
               <div class="exp-date">Aug 2026 – Present</div>
             </div>
             <p class="exp-role">Research Intern</p>
@@ -740,6 +768,25 @@
                 success checks, and partial-information variants; built an early
                 state-engine prototype and found that symbolic task constraints
                 masked visual activity-recognition errors.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card exp-card">
+            <div class="exp-header">
+              <div class="exp-title">Independent Research Project</div>
+              <div class="exp-date">Sep 2026 – Present</div>
+            </div>
+            <p class="exp-role">
+              In collaboration with
+              <a href="https://shulin16.github.io/" target="_blank" rel="noopener">Shulin Tian</a>
+              (Ph.D. student, S-Lab, NTU)
+            </p>
+            <ul class="tight">
+              <li>
+                Connecting DreamX latent actions with EgoTools’ 3D hand poses
+                and depth to test whether spatial grounding improves contact in
+                generated robot tool-use videos.
               </li>
             </ul>
           </article>
@@ -793,8 +840,8 @@
                 Jun 2026 – Oct 2026: For <a href="https://arxiv.org/abs/2611.05377" target="_blank" rel="noopener">DreamX</a>, ran the latent-action baseline
                 comparison on LARYBench under a shared protocol, and co-ran
                 human-to-robot action-transfer experiments on a bimanual robot,
-                recording human demonstrations and paired teleoperated
-                reference trajectories.
+                recording human demonstrations and teleoperated reference
+                trajectories for evaluation.
               </li>
               <li>
                 Jun 2025 – Nov 2025: Contributed to C3G, analyzing DINOv2-based
@@ -812,7 +859,8 @@
               <div class="exp-date">Dec 2024 – Jun 2025</div>
             </div>
             <p class="exp-role">
-              Research Intern · Advisor: Prof. Mun Churl Kim
+              Research Intern · Advisor:
+              <a href="https://viclab.kaist.ac.kr/professor" target="_blank" rel="noopener">Prof. Munchurl Kim</a>
             </p>
             <ul class="tight">
               <li>
@@ -887,41 +935,28 @@
         <div class="card">
           <ul class="kv">
             <li>
-              <span class="k"
-                >KAIST <strong>Presidential Fellowship</strong> (15th)</span
-              >
-              <span class="v">2025 – Present</span>
+              <span class="k">KAIST <strong>Shared Lives Award</strong> · Top-ranked Recipient</span>
+              <span class="v">Feb 2026</span>
+              <span class="sub">For exceptional and sustained blood donation service (20+ donations)</span>
             </li>
             <li>
-              <span class="k"
-                >National Science & Engineering Scholarship for Academic
-                Excellence</span
-              >
-              <span class="v">2025 – Present</span>
+              <span class="k">National Science & Engineering Scholarship for Academic Excellence</span>
+              <span class="v">Aug 2025 – Present</span>
+              <span class="sub">Korean government merit scholarship for top STEM undergraduates</span>
             </li>
             <li>
-              <span class="k">KAIST EE <strong>Dean’s List Award</strong></span>
-              <span class="v">Spring 2024</span>
-              <span class="sub">Awarded to the top 3% of EE students</span>
+              <span class="k">KAIST <strong>Presidential Fellowship</strong></span>
+              <span class="v">Feb 2025 – Present</span>
+              <span class="sub">One of 3–5 current undergraduates selected annually; up to USD 7,000 for international research</span>
             </li>
             <li>
-              <span class="k"
-                >KAIST <strong>Freshman Dean’s List Award</strong></span
-              >
-              <span class="v">Fall 2021</span>
-              <span class="sub"
-                >Awarded to the top 3% of first-year students</span
-              >
+              <span class="k">Woon Hae Scholarship</span>
+              <span class="v">Feb 2025 – Dec 2025</span>
             </li>
             <li>
-              <span class="k">Woon Hae Scholarship (12th)</span>
-              <span class="v">2025</span>
-            </li>
-            <li>
-              <span class="k"
-                >KAIST Shared Lives Award · Top-ranked Recipient</span
-              >
-              <span class="v">2026</span>
+              <span class="k">KAIST <strong>Dean’s List</strong>, College of Engineering</span>
+              <span class="v">Fall 2021, Spring 2024</span>
+              <span class="sub">Awarded to the top 3% of students</span>
             </li>
           </ul>
         </div>
@@ -929,32 +964,58 @@
       <section id="activities">
         <div class="section-head">
           <div>
-            <h2>Beyond research</h2>
+            <h2>Leadership & service</h2>
           </div>
         </div>
 
-        <div class="skill-grid">
+        <div class="card">
+          <ul class="kv">
+            <li>
+              <span class="k">Member, Young Engineers Honor Society (YEHS)</span>
+              <span class="v">Jan 2025 – Present</span>
+              <span class="sub">Nationwide society of engineering students organized by the National Academy of Engineering of Korea</span>
+            </li>
+            <li>
+              <span class="k">Invited Speaker, KAIST–SNU Student Camp</span>
+              <span class="v">2025, 2026</span>
+              <span class="sub">Gave invited talks at a camp of about 50 KAIST and SNU students</span>
+            </li>
+            <li>
+              <span class="k">President, EERun (KAIST EE Running Club)</span>
+              <span class="v">Sep 2024 – Dec 2025</span>
+              <span class="sub">Designed weekly training programs and organized semester events</span>
+            </li>
+            <li>
+              <span class="k">Volunteer Instructor, SilverLining</span>
+              <span class="v">Sep 2024 – Dec 2025</span>
+              <span class="sub">Taught science and English to K–12 students</span>
+            </li>
+            <li>
+              <span class="k">Freshman Proctor (Senior Mentor), KAIST</span>
+              <span class="v">2024</span>
+              <span class="sub">Mentored a class of about 30 freshmen, selected as an outstanding freshman class</span>
+            </li>
+            <li>
+              <span class="k">Squad Leader, Republic of Korea Army</span>
+              <span class="v">Jul 2023 – Jan 2024</span>
+              <span class="sub">Built an Excel tool computing solar azimuth and elevation to prevent damage to optical equipment; distributed unit-wide and received a Battalion Commander’s Commendation</span>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-grid skills-block">
           <div class="card skill-card">
-            <p>
-              <strong>Leadership:</strong> President of EERun, Google Student
-              Ambassador, member of the Young Engineers Honor Society.
-            </p>
+            <p><strong>Programming:</strong> Python, PyTorch, C/C++, Git, LaTeX.</p>
           </div>
           <div class="card skill-card">
-            <p>
-              <strong>Programming:</strong> Python, C/C++, PyTorch, Git, LaTeX.
-            </p>
+            <p><strong>Research:</strong> bimanual robot experiments and teleoperation, Isaac Sim, MuJoCo,
+            egocentric video data collection, video diffusion models, 3D Gaussian splatting, VLM fine-tuning.</p>
           </div>
           <div class="card skill-card">
-            <p>
-              <strong>Research toolkit:</strong> video preprocessing, dataset
-              curation, annotation pipelines, model evaluation, and 3D/vision
-              experimentation.
-            </p>
+            <p><strong>Also:</strong> Google Student Ambassador, KAIST AI Studying Club.</p>
           </div>
         </div>
       </section>
-      <footer class="foot">© 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a> · Updated October 2026</footer>
+      <footer class="foot">© 2026 Junsu Kim · <a href="mailto:sam9732@kaist.ac.kr">sam9732@kaist.ac.kr</a> · Updated November 2026</footer>
       </main>
     </div>
     <dialog id="lightbox" class="lightbox" aria-label="Photo"><img alt="" /></dialog>
